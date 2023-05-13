@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply font-heading text-8xl font-normal;
+  }
+  h2 {
+    @apply font-heading text-6xl font-bold;
+  }
+  h3 {
+    @apply font-heading text-4xl font-medium;
+  }
+  h4 {
+    @apply font-heading text-3xl font-medium;
+  }
+  h5 {
+    @apply font-heading text-2xl font-medium;
+  }
+  h6 {
+    @apply font-heading text-xl font-medium;
+  }
+  .subtitle {
+    @apply font-serif text-lg font-medium;
+  }
+  .body {
+    @apply text-base font-normal;
+  }
+  button {
+    @apply rounded px-4 py-2 text-base font-medium  hover:ring hover:ring-offset-1 focus:ring;
+    display: inline-block;
+  }
+  button.btn-primary {
+    @apply bg-gray-500 text-white;
+  }
+  button.btn-outline {
+    @apply border border-gray-700 bg-transparent text-gray-700 hover:bg-gray-800 hover:text-white focus:bg-gray-900;
+  }
+  small {
+    @apply font-serif text-xs font-medium;
+  }
+  .overline {
+    @apply text-xs font-medium uppercase tracking-widest;
+  }
+}
