@@ -1,8 +1,11 @@
 import "./App.css";
+import { Happyemoji, User } from "iconsax-react";
 
 function App() {
   return (
     <>
+      <User size="32" color="#ff8a65" variant="Bulk" />
+      <Happyemoji size="32" color="#ff8a65" variant="Bulk" />
       <h1 className="text-3xl font-bold text-cyan-500 underline">Typography</h1>
       <hr className="my-4" />
       <section className="grid gap-2">
@@ -28,6 +31,7 @@ function App() {
         <button className="btn-primary justify-self-center">Primary</button>
         <button className="btn-outline justify-self-center">Outline</button>
         <button className=" justify-self-center">Outline</button>
+        <input className=" justify-self-center" />
         <div>
           <small>caption text</small>
         </div>
