@@ -3,240 +3,97 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --light-background: #fdf7f1;
+    --light-text: #170c03;
+    --light-primary: #efb680;
+    --light-secondary: #fae7d6;
+    --light-accent: #eca969;
+    --dark-background: #090a00;
+    --dark-text: #fbfddd;
+    --dark-primary: #efb680;
+    --dark-secondary: #292929;
+    --dark-accent: #bcbdc7;
+  }
+
+  :root {
+    --current-background: var(--light-background);
+    --current-text: var(--light-text);
+    --current-primary: var(--light-primary);
+    --current-secondary: var(--light-secondary);
+    --current-accent: var(--light-accent);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --current-background: var(--dark-background);
+      --current-text: var(--dark-text);
+      --current-primary: var(--dark-primary);
+      --current-secondary: var(--dark-secondary);
+      --current-accent: var(--dark-accent);
+    }
+  }
+
+  body {
+    background-color: var(--current-background);
+  }
+
   h1 {
-    @apply font-heading text-8xl font-normal;
+    @apply font-raleway text-6xl font-normal;
+    color: var(--current-text);
   }
   h2 {
-    @apply font-heading text-6xl font-bold;
+    @apply font-raleway text-5xl font-bold;
+    color: var(--current-text);
   }
   h3 {
-    @apply font-heading text-4xl font-medium;
+    @apply font-raleway text-4xl font-medium;
+    color: var(--current-text);
   }
   h4 {
-    @apply font-heading text-3xl font-medium;
+    @apply font-raleway text-3xl font-medium;
+    color: var(--current-text);
   }
   h5 {
-    @apply font-heading text-2xl font-medium;
+    @apply font-raleway text-2xl font-medium;
+    color: var(--current-text);
   }
   h6 {
-    @apply font-heading text-xl font-medium;
+    @apply font-raleway text-xl font-medium;
+    color: var(--current-text);
   }
   .subtitle {
-    @apply font-serif text-lg font-medium;
+    font-family: "Averia Serif Libre", serif;
+    @apply text-lg font-normal;
+    color: var(--current-text);
   }
   .body {
     @apply text-base font-normal;
+    color: var(--current-text);
   }
   button {
-    @apply rounded px-4 py-2 text-base font-medium hover:ring hover:ring-offset-1 focus:ring;
+    @apply rounded-default px-4 py-2 text-base font-medium hover:ring hover:ring-offset-1 focus:ring;
     display: inline-block;
+    color: var(--current-text);
+    background-color: var(--current-background);
   }
   button.btn-primary {
-    @apply bg-gray-500 text-white;
+    @apply bg-dark-primary text-dark-text;
+    color: var(--current-text);
+    background-color: var(--current-primary);
   }
   button.btn-outline {
-    @apply border border-gray-700 bg-transparent text-gray-700 hover:bg-gray-800 hover:text-white focus:bg-gray-900;
+    @apply border border-dark-secondary bg-transparent text-dark-text hover:bg-dark-primary hover:text-dark-background focus:bg-dark-accent;
+    color: var(--current-text);
+    background-color: var(--current-background);
   }
   small {
-    @apply font-serif text-xs font-medium;
+    font-family: "Averia Serif Libre", serif;
+    @apply text-xs font-bold;
+    color: var(--current-text);
   }
   .overline {
     @apply text-xs font-medium uppercase tracking-widest;
-  }
-}
-
-/**Loading Animation*/
-/* CSS Variables for easy customization and maintainability */
-:root {
-  --engine-size: 9rem; /* Nearest multiple of 16 for 150px */
-  --engine-border-width: 1rem; /* Nearest multiple of 8 for 16px */
-  --engine-border-color: #555;
-  --engine-background-color: #0af;
-  --blade-width: 12%;
-  --blade-height: 48%;
-  --blade-background-color: #222;
-  --blade-after-height: 70%;
-  --blade-after-background-color: #808080;
-  --pivot-size: 1rem; /* Nearest multiple of 8 for 10px */
-  --pivot-background-color: #ccc;
-  --pivot-after-background-color: #888;
-  --engine-shadow-size: calc(var(--engine-size) * 0.8);
-}
-
-.engine-loader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 100px;
-  margin-top: 1rem;
-}
-
-.engine-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: calc(var(--engine-size) + 2 * var(--engine-border-width));
-  height: calc(var(--engine-size) + 2 * var(--engine-border-width));
-  animation: pulse 2s infinite ease-in-out;
-}
-
-.engine {
-  position: relative;
-  width: var(--engine-size);
-  height: var(--engine-size);
-  border: var(--engine-border-width) solid var(--engine-border-color);
-  border-radius: 50%;
-  animation: spin-start 8s cubic-bezier(0.6, 0, 0.25, 0.25) forwards,
-    spin-end 12s linear 8s infinite;
-  box-shadow: inset 0 0 10px var(--engine-background-color);
-  background: radial-gradient(
-    circle at center,
-    var(--engine-background-color),
-    transparent
-  );
-  z-index: 1;
-}
-
-.engine-shadow {
-  position: relative;
-  top: 1rem;
-  width: var(--engine-shadow-size);
-  height: var(--engine-shadow-size);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(0, 0, 0, 0.05) 75%,
-    transparent 100%
-  );
-  transform: scaleY(0.2);
-  animation: pulse-shadow 2s infinite ease-in-out;
-}
-
-.blade {
-  position: absolute;
-  width: var(--blade-width);
-  height: var(--blade-height);
-  left: 44%;
-  bottom: 50%;
-  transform-origin: 50% 100%;
-  background: var(--blade-background-color);
-  border-radius: 50% 50% 100% 20%;
-  overflow: hidden;
-}
-
-.blade:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -3px; /* fine tuned for shape and will need iteration if width is changed */
-  width: 14px; /* (related to left) fine tuned for shape and will need iteration if width is changed */
-  height: var(--blade-after-height);
-  background: var(--blade-after-background-color);
-  border-radius: 50% 50% 100% 20%;
-}
-
-/* Rotation for each blade */
-.blade:nth-child(1) {
-  transform: rotate(0deg);
-}
-.blade:nth-child(2) {
-  transform: rotate(36deg);
-}
-.blade:nth-child(3) {
-  transform: rotate(72deg);
-}
-.blade:nth-child(4) {
-  transform: rotate(108deg);
-}
-.blade:nth-child(5) {
-  transform: rotate(144deg);
-}
-.blade:nth-child(6) {
-  transform: rotate(180deg);
-}
-.blade:nth-child(7) {
-  transform: rotate(216deg);
-}
-.blade:nth-child(8) {
-  transform: rotate(252deg);
-}
-.blade:nth-child(9) {
-  transform: rotate(288deg);
-}
-.blade:nth-child(10) {
-  transform: rotate(324deg);
-}
-
-.pivot {
-  position: absolute;
-  width: var(--pivot-size);
-  height: var(--pivot-size);
-  background: #333;
-  border-radius: 50%;
-  left: 50%;
-  bottom: 50%;
-  transform: translate(-50%, 50%);
-}
-
-.pivot {
-  position: absolute;
-  overflow: hidden;
-  width: var(--pivot-size);
-  height: var(--pivot-size);
-  border-radius: 50%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #ccc;
-  z-index: 2;
-}
-
-.pivot:after {
-  content: "";
-  width: var(--pivot-size);
-  height: calc(var(--pivot-size) / 2);
-  background: #888;
-  display: block;
-}
-
-@keyframes spin-start {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(1500deg);
-  }
-}
-
-@keyframes spin-end {
-  0% {
-    transform: rotate(1500deg);
-  }
-  100% {
-    transform: rotate(4500deg);
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes pulse-shadow {
-  0%,
-  100% {
-    width: var(--engine-shadow-size);
-  }
-  50% {
-    width: calc(
-      var(--engine-shadow-size) + 2rem
-    ); /* Nearest multiple of 16 for 20px */
+    color: var(--current-text);
   }
 }
