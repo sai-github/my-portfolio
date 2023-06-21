@@ -11,6 +11,204 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ramu Dev</title>
+
+    <style>
+      /**Loading Animation*/
+      /* CSS Variables for easy customization and maintainability */
+      :root {
+        --engine-size: 9rem; /* Nearest multiple of 16 for 150px */
+        --engine-border-width: 1rem; /* Nearest multiple of 8 for 16px */
+        --engine-border-color: #555;
+        --engine-background-color: #0af;
+        --blade-width: 12%;
+        --blade-height: 48%;
+        --blade-background-color: #222;
+        --blade-after-height: 70%;
+        --blade-after-background-color: #808080;
+        --pivot-size: 1rem; /* Nearest multiple of 8 for 10px */
+        --pivot-background-color: #ccc;
+        --pivot-after-background-color: #888;
+        --engine-shadow-size: calc(var(--engine-size) * 0.8);
+      }
+
+      .engine-loader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+        margin-top: 1rem;
+      }
+
+      .engine-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(var(--engine-size) + 2 * var(--engine-border-width));
+        height: calc(var(--engine-size) + 2 * var(--engine-border-width));
+        animation: pulse 2s infinite ease-in-out;
+      }
+
+      .engine {
+        position: relative;
+        width: var(--engine-size);
+        height: var(--engine-size);
+        border: var(--engine-border-width) solid var(--engine-border-color);
+        border-radius: 50%;
+        animation: spin-start 8s cubic-bezier(0.6, 0, 0.25, 0.25) forwards,
+          spin-end 12s linear 8s infinite;
+        box-shadow: inset 0 0 10px var(--engine-background-color);
+        background: radial-gradient(
+          circle at center,
+          var(--engine-background-color),
+          transparent
+        );
+        z-index: 1;
+      }
+
+      .engine-shadow {
+        position: relative;
+        top: 1rem;
+        width: var(--engine-shadow-size);
+        height: var(--engine-shadow-size);
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 0, 0, 0.2) 0%,
+          rgba(0, 0, 0, 0.1) 50%,
+          rgba(0, 0, 0, 0.05) 75%,
+          transparent 100%
+        );
+        transform: scaleY(0.2);
+        animation: pulse-shadow 2s infinite ease-in-out;
+      }
+
+      .blade {
+        position: absolute;
+        width: var(--blade-width);
+        height: var(--blade-height);
+        left: 44%;
+        bottom: 50%;
+        transform-origin: 50% 100%;
+        background: var(--blade-background-color);
+        border-radius: 50% 50% 100% 20%;
+        overflow: hidden;
+      }
+
+      .blade:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -3px; /* fine tuned for shape and will need iteration if width is changed */
+        width: 14px; /* (related to left) fine tuned for shape and will need iteration if width is changed */
+        height: var(--blade-after-height);
+        background: var(--blade-after-background-color);
+        border-radius: 50% 50% 100% 20%;
+      }
+
+      /* Rotation for each blade */
+      .blade:nth-child(1) {
+        transform: rotate(0deg);
+      }
+      .blade:nth-child(2) {
+        transform: rotate(36deg);
+      }
+      .blade:nth-child(3) {
+        transform: rotate(72deg);
+      }
+      .blade:nth-child(4) {
+        transform: rotate(108deg);
+      }
+      .blade:nth-child(5) {
+        transform: rotate(144deg);
+      }
+      .blade:nth-child(6) {
+        transform: rotate(180deg);
+      }
+      .blade:nth-child(7) {
+        transform: rotate(216deg);
+      }
+      .blade:nth-child(8) {
+        transform: rotate(252deg);
+      }
+      .blade:nth-child(9) {
+        transform: rotate(288deg);
+      }
+      .blade:nth-child(10) {
+        transform: rotate(324deg);
+      }
+
+      .pivot {
+        position: absolute;
+        width: var(--pivot-size);
+        height: var(--pivot-size);
+        background: #333;
+        border-radius: 50%;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, 50%);
+      }
+
+      .pivot {
+        position: absolute;
+        overflow: hidden;
+        width: var(--pivot-size);
+        height: var(--pivot-size);
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background: #ccc;
+        z-index: 2;
+      }
+
+      .pivot:after {
+        content: "";
+        width: var(--pivot-size);
+        height: calc(var(--pivot-size) / 2);
+        background: #888;
+        display: block;
+      }
+
+      @keyframes spin-start {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(1500deg);
+        }
+      }
+
+      @keyframes spin-end {
+        0% {
+          transform: rotate(1500deg);
+        }
+        100% {
+          transform: rotate(4500deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes pulse-shadow {
+        0%,
+        100% {
+          width: var(--engine-shadow-size);
+        }
+        50% {
+          width: calc(
+            var(--engine-shadow-size) + 2rem
+          ); /* Nearest multiple of 16 for 20px */
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="engine-loader">
