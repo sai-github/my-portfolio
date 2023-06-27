@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
+// overrides and extensions
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "media",
   theme: {
     extend: {
       colors: {
@@ -51,14 +53,16 @@ export default {
         telex: ["Telex"],
       },
       boxShadow: {
-        "button-default": "2px 2px 0px 0px rgba(0, 0, 0, 0.8)",
-        "button-focus": "4px 4px 0px 0px rgba(0, 0, 0, 0.8)",
-        "button-default-dark": "2px 2px 0px 0px rgba(0, 0, 0, 0.8)",
-        "button-focus-dark": "4px 4px 0px 0px rgba(0, 0, 0, 0.8)",
+        "button-default": "2px 2px 0px 0px var(--light-text)",
+        "button-hover": "3px 3px 0px 0px var(--light-text)",
+        "button-focus": "4px 4px 0px 0px var(--light-text)",
+        "button-default-dark": "2px 2px 0px 0px var(--dark-text)",
+        "button-hover-dark": "3px 3px 0px 0px var(--dark-text)",
+        "button-focus-dark": "4px 4px 0px 0px var(--dark-text)",
         "input-focus-light": "0px 0px 0px 2px #fae7d6",
         "input-focus-dark": "0px 0px 0px 2px #efb680",
-        "card-light": "1px 1px 0px 0px rgba(0, 0, 0, 0.8)",
-        "card-dark": "1px 1px 0px 0px rgba(0, 0, 0, 0.8)",
+        "card-light": "2px 2px 0px 0px var(--light-text)",
+        "card-dark": "2px 2px 0px 0px var(--dark-text)",
       },
       borderRadius: {
         none: "0",
