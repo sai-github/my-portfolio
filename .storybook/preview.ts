@@ -10,6 +10,18 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    viewport: {
+      viewports: {
+        iphone6: {
+          name: "iPhone 6",
+          styles: {
+            width: "375px",
+            height: "667px",
+          },
+        },
+        // ... add more viewports if needed
+      },
+    },
   },
 };
 
