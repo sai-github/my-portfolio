@@ -1,0 +1,27 @@
+@tailwind base;
+
+@layer base {
+  button {
+    @apply flex flex-row items-center justify-center gap-1 rounded-lg border-2 px-4 py-2 text-lg font-normal shadow-button-default hover:shadow-button-hover focus:shadow-button-focus dark:shadow-button-default-dark dark:hover:shadow-button-hover-dark dark:focus:shadow-button-focus-dark;
+
+    font-family: "Averia Serif Libre", serif;
+    color: var(--current-text);
+    background-color: var(--current-background);
+    border-color: var(--current-text);
+    outline: none;
+  }
+
+  button.btn-primary {
+    color: var(--current-text);
+    background-color: var(--current-primary);
+  }
+
+  button.btn-secondary {
+    color: var(--current-text);
+    background-color: var(--current-secondary);
+  }
+
+  button.btn-outline {
+    background-color: transparent;
+  }
+}

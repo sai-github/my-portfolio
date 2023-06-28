@@ -8,7 +8,7 @@
     --light-text: #170c03;
     --light-primary: #efb680;
     --light-secondary: #fae7d6;
-    --light-accent: #eca969;
+    --light-accent: #ff8e24;
     --dark-background: #090a00;
     --dark-text: #fbfddd;
     --dark-primary: #efb680;
@@ -70,22 +70,6 @@
   .body {
     @apply text-base font-normal;
     color: var(--current-text);
-  }
-  button {
-    @apply rounded-default px-4 py-2 text-base font-medium hover:ring hover:ring-offset-1 focus:ring;
-    display: inline-block;
-    color: var(--current-text);
-    background-color: var(--current-background);
-  }
-  button.btn-primary {
-    @apply bg-dark-primary text-dark-text;
-    color: var(--current-text);
-    background-color: var(--current-primary);
-  }
-  button.btn-outline {
-    @apply border border-dark-secondary bg-transparent text-dark-text hover:bg-dark-primary hover:text-dark-background focus:bg-dark-accent;
-    color: var(--current-text);
-    background-color: var(--current-background);
   }
   small {
     font-family: "Averia Serif Libre", serif;
