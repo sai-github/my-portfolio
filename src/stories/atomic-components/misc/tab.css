@@ -1,0 +1,17 @@
+@tailwind components;
+
+@layer components {
+  .tab {
+    @apply inline-flex h-8 cursor-pointer items-center justify-center rounded-lg p-2 font-averiaSerifLibre text-[18px];
+    color: var(--current-text);
+  }
+
+  .tab:hover {
+    background-color: var(--current-secondary);
+  }
+
+  .tab.active {
+    @apply underline;
+    background-color: var(--current-background);
+  }
+}
