@@ -1,0 +1,18 @@
+@tailwind components;
+
+@layer components {
+  .menu {
+    @apply flex flex-col gap-0;
+  }
+
+  .menu .menu-list {
+    @apply flex cursor-pointer justify-center border-x-2 border-b px-8 py-4 shadow-card-light last:rounded-b-lg last:border-b-2 dark:shadow-card-dark;
+    color: var(--current-text);
+    background-color: var(--current-secondary);
+    border-color: var(--current-text);
+  }
+
+  .menu-list:hover {
+    background-color: var(--current-primary);
+  }
+}
