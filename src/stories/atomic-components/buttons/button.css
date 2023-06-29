@@ -11,16 +11,14 @@
   }
 
   .button.btn-primary {
-    color: var(--current-text);
-    background-color: var(--current-primary);
+    @apply bg-[var(--current-primary)];
   }
 
   .button.btn-secondary {
-    color: var(--current-text);
-    background-color: var(--current-secondary);
+    @apply bg-[var(--current-secondary)];
   }
 
   .button.btn-outline {
-    background-color: transparent;
+    @apply bg-transparent;
   }
 }
