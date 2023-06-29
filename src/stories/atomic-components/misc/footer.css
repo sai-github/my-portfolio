@@ -1,0 +1,28 @@
+@tailwind components;
+
+@layer components {
+  .footer {
+    @apply flex items-center justify-between rounded-t-lg px-4 py-2.5 sm:p-6;
+    border-top: 4px solid var(--light-accent);
+    background-color: var(--dark-background);
+  }
+
+  .footer .cc {
+    @apply h-2 sm:h-4;
+  }
+
+  .footer span {
+    color: var(--dark-text);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .footer {
+      border-top: 4px solid var(--dark-accent);
+      background-color: var(--light-background);
+    }
+
+    .footer span {
+      color: var(--light-text);
+    }
+  }
+}
