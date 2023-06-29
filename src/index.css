@@ -34,6 +34,22 @@
     }
   }
 
+  [data-theme="light"] {
+    --current-background: var(--light-background);
+    --current-text: var(--light-text);
+    --current-primary: var(--light-primary);
+    --current-secondary: var(--light-secondary);
+    --current-accent: var(--light-accent);
+  }
+
+  [data-theme="dark"] {
+    --current-background: var(--dark-background);
+    --current-text: var(--dark-text);
+    --current-primary: var(--dark-primary);
+    --current-secondary: var(--dark-secondary);
+    --current-accent: var(--dark-accent);
+  }
+
   body {
     background-color: var(--current-background);
   }
