@@ -1,0 +1,48 @@
+@tailwind components;
+
+@layer components {
+  label[aria-disabled="true"] {
+    @apply opacity-50;
+  }
+
+  label[aria-required="true"]::after {
+    @apply ml-2 text-actions-danger;
+    content: "*";
+  }
+  .input {
+    @apply cursor-pointer rounded-lg border-2 bg-transparent p-2 font-telex text-base font-normal outline-none;
+    color: var(--current-text);
+    border-color: var(--current-text);
+  }
+
+  .input:disabled {
+    @apply cursor-not-allowed opacity-25;
+  }
+
+  .input::placeholder {
+    @apply text-shades-disabledBlack;
+  }
+
+  .input:hover:not([disabled]) {
+    @apply bg-shades-lightGrey;
+  }
+
+  .input:focus {
+    @apply border-light-accent  bg-shades-lightGrey ring-2 ring-light-secondary;
+  }
+
+  .input-container {
+    @apply flex min-w-[192px] flex-col gap-1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .input::placeholder,
+    .input:hover {
+      @apply text-shades-disabledBlack;
+    }
+
+    .input:focus {
+      @apply border-dark-text  bg-shades-lightGrey text-shades-disabledBlack ring-2 ring-light-primary;
+    }
+  }
+}
