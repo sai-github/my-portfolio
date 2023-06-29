@@ -15,7 +15,7 @@ const Button = ({
   children,
   onClick,
 }: ButtonProps) => {
-  const btnCls = clsx({
+  const btnCls = clsx("button", {
     "btn-primary": variant === "primary",
     "btn-secondary": variant === "secondary",
     "btn-outline": variant === "outline",
