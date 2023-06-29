@@ -54,6 +54,10 @@
     background-color: var(--current-background);
   }
 
+  a {
+    @apply underline decoration-wavy underline-offset-2;
+  }
+
   h1 {
     @apply font-raleway text-6xl font-normal;
     color: var(--current-text);
@@ -79,17 +83,15 @@
     color: var(--current-text);
   }
   .subtitle {
-    font-family: "Averia Serif Libre", serif;
-    @apply text-lg font-normal;
+    @apply font-averiaSerifLibre text-lg font-normal;
     color: var(--current-text);
   }
   .body {
-    @apply text-base font-normal;
+    @apply font-telex text-base font-normal;
     color: var(--current-text);
   }
   small {
-    font-family: "Averia Serif Libre", serif;
-    @apply text-xs font-bold;
+    @apply font-averiaSerifLibre text-xs font-bold;
     color: var(--current-text);
   }
   .overline {
