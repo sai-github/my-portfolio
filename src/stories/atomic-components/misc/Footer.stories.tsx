@@ -6,6 +6,13 @@ const meta = {
   title: "Example/Footer",
   component: Footer,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "There are no special props needed",
+      },
+    },
+  },
 } satisfies Meta<typeof Footer>;
 
 export default meta;
