@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .card {
+    @apply rounded-3xl border-2 border-[var(--current-text)] bg-[var(--current-secondary)] text-[var(--current-text)] shadow-card-light dark:shadow-card-dark;
+  }
+}
