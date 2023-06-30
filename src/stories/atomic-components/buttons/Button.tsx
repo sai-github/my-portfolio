@@ -4,14 +4,14 @@ import { Icon } from "iconsax-react";
 
 interface ButtonProps {
   variant?: "primary" | "secondary" | "outline";
-  icon?: Icon;
+  Icon?: Icon;
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button = ({
   variant = "primary",
-  icon: Icon,
+  Icon: Icon,
   children,
   onClick,
 }: ButtonProps) => {
@@ -20,6 +20,7 @@ const Button = ({
     "btn-secondary": variant === "secondary",
     "btn-outline": variant === "outline",
     "px-2": !children, // change padding when no children
+    "px-4": children,
   });
 
   return (

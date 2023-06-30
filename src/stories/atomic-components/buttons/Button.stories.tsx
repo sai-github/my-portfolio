@@ -42,8 +42,8 @@ export const Outline: Story = {
 };
 
 export const WithIconPrimary: Story = {
-  render: () => (
-    <Button icon={Send} onClick={action("clicked")}>
+  render: (args) => (
+    <Button {...args} Icon={Send} onClick={action("clicked")}>
       Hello
     </Button>
   ),
@@ -51,5 +51,7 @@ export const WithIconPrimary: Story = {
 };
 
 export const IconButton: Story = {
-  render: () => <Button icon={Send} onClick={action("clicked")} />,
+  render: (args) => (
+    <Button {...args} Icon={Send} onClick={action("clicked")} />
+  ),
 };

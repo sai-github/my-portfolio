@@ -2,7 +2,7 @@
 
 @layer components {
   .button {
-    @apply flex flex-row items-center justify-center gap-1 rounded-lg border-2 px-4 py-2 font-averiaSerifLibre text-lg font-normal shadow-button-default hover:shadow-button-hover focus:shadow-button-focus dark:shadow-button-default-dark dark:hover:shadow-button-hover-dark dark:focus:shadow-button-focus-dark;
+    @apply flex flex-row items-center justify-center gap-1 rounded-lg border-2 py-2 font-averiaSerifLibre text-lg font-normal shadow-button-default hover:shadow-button-hover focus:shadow-button-focus dark:shadow-button-default-dark dark:hover:shadow-button-hover-dark dark:focus:shadow-button-focus-dark;
 
     color: var(--current-text);
     background-color: var(--current-background);
