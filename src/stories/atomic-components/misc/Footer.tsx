@@ -8,7 +8,7 @@ const CC_LOGO = {
 };
 const Footer = () => {
   const isDesktop = useIsDesktop();
-  const textCls = clsx(isDesktop ? "subtitle" : "caption"); // careful with color overrides from class as well
+  const textCls = clsx(isDesktop ? "subtitle" : "small"); // careful with color overrides from class as well
 
   return (
     <div className="footer">
