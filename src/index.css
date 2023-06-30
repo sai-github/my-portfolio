@@ -51,6 +51,8 @@
   }
 
   body {
+    @apply font-telex text-base font-normal;
+    color: var(--current-text);
     background-color: var(--current-background);
   }
 
@@ -86,11 +88,8 @@
     @apply font-averiaSerifLibre text-lg font-normal;
     color: var(--current-text);
   }
-  .body {
-    @apply font-telex text-base font-normal;
-    color: var(--current-text);
-  }
-  small {
+
+  .small {
     @apply font-averiaSerifLibre text-xs font-bold;
     color: var(--current-text);
   }
