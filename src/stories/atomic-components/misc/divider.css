@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components {
+  .divider-container {
+    @apply flex items-center gap-2;
+  }
+
+  .divider-container .line {
+    @apply bg-[var(--current-accent)];
+    flex: 1 0 0;
+  }
+
+  .divider-container .label {
+    @apply px-2 text-center;
+  }
+}
