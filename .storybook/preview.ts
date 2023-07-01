@@ -3,6 +3,11 @@ import "../src/index.css";
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ["Intro", "Atoms", "Molecules", "Example"],
+      },
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
