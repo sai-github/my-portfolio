@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   // Special Props
-  label: string;
+  label?: string;
   hintType?: "success" | "danger" | "info";
   hint?: string;
 }
