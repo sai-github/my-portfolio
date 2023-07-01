@@ -10,7 +10,7 @@ const Card = (props: CardProps) => {
 
   return (
     <div className={cardCls} {...rest}>
-      Card
+      {props.children}
     </div>
   );
 };
