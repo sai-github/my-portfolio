@@ -5,7 +5,7 @@ import Button from "./Button";
 import { Send } from "iconsax-react";
 
 const meta = {
-  title: "Example/Button",
+  title: "Atoms/Button",
   component: Button,
   tags: ["autodocs"],
   argTypes: {

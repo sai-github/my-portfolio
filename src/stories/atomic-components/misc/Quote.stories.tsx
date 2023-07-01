@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Quote from "./Quote";
 const meta = {
-  title: "Example/Quote",
+  title: "Atoms/Quote",
   component: Quote,
   tags: ["autodocs"],
   argTypes: {

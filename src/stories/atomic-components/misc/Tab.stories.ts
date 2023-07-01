@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Tab from "./Tab";
 const meta = {
-  title: "Example/Tab",
+  title: "Atoms/Tab",
   component: Tab,
   tags: ["autodocs"],
   argTypes: {

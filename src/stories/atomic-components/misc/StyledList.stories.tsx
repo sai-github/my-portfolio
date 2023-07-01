@@ -3,7 +3,7 @@ import { ArrowCircleRight } from "iconsax-react";
 
 import StyledList from "./StyledList";
 const meta = {
-  title: "Example/StyledList",
+  title: "Atoms/StyledList",
   component: StyledList,
   tags: ["autodocs"],
   argTypes: {

@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { userEvent, within } from "@storybook/testing-library";
 
 const meta = {
-  title: "Example/Header",
+  title: "Atoms/Header",
   component: Header,
   tags: ["autodocs"],
   parameters: {
