@@ -10,7 +10,7 @@ const Divider = ({ dir, breakText }: DividerProps) => {
   const containerCls = clsx("divider-container", {
     "flex-row": dir === "hz",
     "flex-col": dir === "vt",
-    "h-[100%]": dir === "vt",
+    "h-[inherit]": dir === "vt",
   });
   const lineCls = clsx("line", dir === "hz" ? "h-[2px]" : "w-[2px]");
 
