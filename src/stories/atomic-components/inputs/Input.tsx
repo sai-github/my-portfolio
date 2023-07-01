@@ -2,21 +2,9 @@ import React from "react";
 import "./input.css";
 import clsx from "clsx";
 
-interface MyInputProps {
-  // Common Props
-  id?: string;
-  name?: string;
-  type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
-  label?: string;
-  value?: string | number;
-  defaultValue?: string | number;
-  placeholder?: string;
-  disabled?: boolean;
-  required?: boolean;
-  autoFocus?: boolean;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-
+interface MyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   // Special Props
+  label: string;
   hintType?: "success" | "danger" | "info";
   hint?: string;
 }
@@ -26,6 +14,7 @@ type InputProps = MyInputProps & React.RefAttributes<HTMLInputElement>;
 const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     id,
+    className,
     name,
     type,
     label,
@@ -53,7 +42,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   });
 
   return (
-    <div className="input-container">
+    <div className={clsx(className, "input-container")}>
       {label && (
         <label
           className="subtitle"

@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import "./button.css";
 import { Icon } from "iconsax-react";
+import React from "react";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline";
   Icon?: Icon;
   children?: React.ReactNode;
@@ -10,12 +11,13 @@ interface ButtonProps {
 }
 
 const Button = ({
+  className,
   variant = "primary",
   Icon: Icon,
   children,
   onClick,
 }: ButtonProps) => {
-  const btnCls = clsx("button", {
+  const btnCls = clsx(className, "button", {
     "btn-primary": variant === "primary",
     "btn-secondary": variant === "secondary",
     "btn-outline": variant === "outline",

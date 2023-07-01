@@ -2,7 +2,8 @@ import React from "react";
 import "./textarea.css";
 import clsx from "clsx";
 
-interface MyTextAreaProps {
+interface MyTextAreaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   // Common Props
   id?: string;
   name?: string;
@@ -25,6 +26,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (props, ref) => {
     const {
       id,
+      className,
       name,
       label,
       value,
@@ -52,7 +54,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     });
 
     return (
-      <div className="textarea-container">
+      <div className={clsx(className, "textarea-container")}>
         {label && (
           <label
             className="subtitle"
