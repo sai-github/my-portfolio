@@ -28,6 +28,7 @@ const meta = {
     hint: {
       control: "text",
     },
+    onChange: { action: "onChange" },
   },
   args: {
     disabled: false,
