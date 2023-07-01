@@ -70,7 +70,7 @@ const Header = ({ labels = [], onNavigate, onLogoClick }: HeaderProps) => {
           </div>
         ) : (
           <Button
-            icon={open ? CloseCircle : MoreCircle}
+            Icon={open ? CloseCircle : MoreCircle}
             onClick={() => {
               setOpen((prev) => !prev);
             }}
