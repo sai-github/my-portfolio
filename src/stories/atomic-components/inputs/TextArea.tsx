@@ -1,0 +1,86 @@
+import React from "react";
+import "./textarea.css";
+import clsx from "clsx";
+
+interface MyTextAreaProps {
+  // Common Props
+  id?: string;
+  name?: string;
+  label?: string;
+  value?: string;
+  defaultValue?: string;
+  placeholder?: string;
+  disabled?: boolean;
+  required?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+
+  // Special Props
+  hintType?: "success" | "danger" | "info";
+  hint?: string;
+}
+
+type TextAreaProps = MyTextAreaProps & React.RefAttributes<HTMLTextAreaElement>;
+
+const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  (props, ref) => {
+    const {
+      id,
+      name,
+      label,
+      value,
+      defaultValue,
+      placeholder,
+      disabled,
+      required,
+      onChange,
+      hintType,
+      hint,
+      ...rest
+    } = props;
+
+    // Generate a unique id if not provided but label is
+    const textareaId =
+      id ||
+      (label
+        ? `textarea-${Math.random().toString(36).substring(2, 9)}`
+        : undefined);
+
+    const hintCls = clsx({
+      "text-actions-info": hintType === "info",
+      "text-actions-success": hintType === "success",
+      "text-actions-danger": hintType === "danger",
+    });
+
+    return (
+      <div className="textarea-container">
+        {label && (
+          <label
+            className="subtitle"
+            htmlFor={textareaId}
+            aria-disabled={disabled}
+            aria-required={required}
+          >
+            {label}
+          </label>
+        )}
+        <textarea
+          className="textarea"
+          ref={ref}
+          id={textareaId}
+          name={name}
+          rows={3}
+          value={value}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          disabled={disabled}
+          required={required}
+          onChange={onChange}
+          {...rest}
+        />
+        {hintType && hint && <div className={hintCls}>{hint}</div>}
+      </div>
+    );
+  }
+);
+
+export default TextArea;

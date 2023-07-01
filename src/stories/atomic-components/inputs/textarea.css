@@ -1,0 +1,48 @@
+@tailwind components;
+
+@layer components {
+  label[aria-disabled="true"] {
+    @apply opacity-50;
+  }
+
+  label[aria-required="true"]::after {
+    @apply ml-2 text-actions-danger;
+    content: "*";
+  }
+  .textarea {
+    @apply cursor-pointer rounded-lg border-2 bg-transparent p-2 font-telex text-base font-normal outline-none;
+    color: var(--current-text);
+    border-color: var(--current-text);
+  }
+
+  .textarea:disabled {
+    @apply cursor-not-allowed opacity-25;
+  }
+
+  .textarea::placeholder {
+    @apply text-shades-disabledBlack;
+  }
+
+  .textarea:hover:not([disabled]) {
+    @apply bg-shades-lightGrey;
+  }
+
+  .textarea:focus {
+    @apply border-light-accent bg-shades-lightGrey ring-2 ring-light-secondary;
+  }
+
+  .textarea-container {
+    @apply flex min-w-[192px] flex-col gap-1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .textarea::placeholder,
+    .textarea:hover {
+      @apply text-shades-disabledBlack;
+    }
+
+    .textarea:focus {
+      @apply border-dark-text bg-shades-lightGrey text-shades-disabledBlack ring-2 ring-light-primary;
+    }
+  }
+}
