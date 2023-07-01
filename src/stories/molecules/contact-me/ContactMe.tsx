@@ -1,12 +1,14 @@
-import clsx from "clsx";
-import Card from "../../cards/Card";
-import useIsDesktop from "../../../../utils/hooks/useIsDesktop";
-import Input from "../../inputs/Input";
-import TextArea from "../../inputs/TextArea";
-import Button from "../../buttons/Button";
-import Divider from "../../misc/Divider";
-import Quote from "../../misc/Quote";
 import React, { useState } from "react";
+import clsx from "clsx";
+
+import Card from "../../atomic-components/cards/Card";
+import useIsDesktop from "../../../utils/hooks/useIsDesktop";
+import Button from "../../atomic-components/buttons/Button";
+import Input from "../../atomic-components/inputs/Input";
+import TextArea from "../../atomic-components/inputs/TextArea";
+import Divider from "../../atomic-components/misc/Divider";
+import Quote from "../../atomic-components/misc/Quote";
+
 import { Send } from "iconsax-react";
 
 interface ContactMeProps {
