@@ -10,7 +10,7 @@ export const experienceList: IExperience[] = [
     data: {
       type: "quote",
       quote:
-        "Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
+        "1.Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
     },
   },
   {
@@ -22,7 +22,7 @@ export const experienceList: IExperience[] = [
     data: {
       type: "quote",
       quote:
-        "Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
+        "2.Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
     },
   },
   {
@@ -34,7 +34,7 @@ export const experienceList: IExperience[] = [
     data: {
       type: "quote",
       quote:
-        "Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
+        "3.Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
     },
   },
 ];
