@@ -6,7 +6,7 @@ const MobileView = () => {
     <div className="mb-24 flex flex-col justify-end  gap-4 text-center">
       <h4>
         <span className="">Developer & </span>
-        <span className="">Designer</span>
+        <span className="text-gradient">Designer</span>
       </h4>
       <h6>
         Hi there 👋 <br />
@@ -23,7 +23,7 @@ const DesktopView = () => {
       <div className="intro flex flex-col justify-center gap-10">
         <h2>
           <span className="">Developer & </span>
-          <span className="">Designer</span>
+          <span className="text-gradient">Designer</span>
         </h2>
         <h4 className="max-w-xl">
           Hi there 👋 <br />
