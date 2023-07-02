@@ -13,6 +13,9 @@
     <title>Ramu Dev</title>
 
     <style>
+      body {
+        margin: 0;
+      }
       /**Loading Animation*/
       /* CSS Variables for easy customization and maintainability */
       :root {
@@ -29,6 +32,16 @@
         --pivot-background-color: #ccc;
         --pivot-after-background-color: #888;
         --engine-shadow-size: calc(var(--engine-size) * 0.8);
+      }
+
+      #spinner-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* bg-color hardcoded as per our theme */
+        background-color: #fdf7f1;
       }
 
       .engine-loader {
@@ -211,26 +224,39 @@
     </style>
   </head>
   <body>
-    <div class="engine-loader">
-      <div class="engine-wrapper">
-        <div class="engine">
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="blade"></div>
-          <div class="pivot"></div>
+    <!-- spinner while the assets load -->
+    <div id="spinner-container">
+      <div class="engine-loader">
+        <div class="engine-wrapper">
+          <div class="engine">
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="blade"></div>
+            <div class="pivot"></div>
+          </div>
         </div>
+        <div class="engine-shadow"></div>
       </div>
-      <div class="engine-shadow"></div>
+
+      <div id="welcome-msg" style="display: none">
+        Welcome Aboard, Passengers !
+      </div>
+
+      <!-- Button to proceed, initially hidden -->
+      <button id="proceed-button" style="display: none" class="btn-primary">
+        Proceed
+      </button>
     </div>
 
-    <div id="root"></div>
+    <!-- React root, initially hidden -->
+    <div id="root" style="display: none"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

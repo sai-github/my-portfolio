@@ -14,19 +14,31 @@ function App() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    if (scrollRef.current) {
-      const scroll = new LocomotiveScroll({
-        el: scrollRef.current,
-        smooth: true,
-      });
+    const handleContentVisible = () => {
+      if (scrollRef.current) {
+        const scroll = new LocomotiveScroll({
+          el: scrollRef.current,
+          smooth: true,
+        });
 
-      // Clean up Locomotive Scroll instance when component unmounts
-      return () => {
-        if (scroll) {
-          scroll.destroy();
-        }
-      };
-    }
+        // Force Locomotive Scroll to recalculate heights
+        scroll.update();
+
+        // Clean up Locomotive Scroll instance when component unmounts
+        return () => {
+          if (scroll) {
+            scroll.destroy();
+          }
+        };
+      }
+    };
+
+    window.addEventListener("react-content-visible", handleContentVisible);
+
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener("react-content-visible", handleContentVisible);
+    };
   }, []);
 
   return (
