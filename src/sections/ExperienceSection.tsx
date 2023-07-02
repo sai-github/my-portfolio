@@ -23,7 +23,13 @@ const ExperienceSection = () => {
   return (
     <section className="my-section items-start" data-scroll-section>
       <div className="mt-32 flex flex-col items-center justify-center gap-6 md:flex-row lg:mt-64">
-        {isDesktop && <Button Icon={ArrowCircleLeft} onClick={handlePrev} />}
+        {isDesktop && (
+          <Button
+            variant="outline"
+            Icon={ArrowCircleLeft}
+            onClick={handlePrev}
+          />
+        )}
         <AnimatePresence mode="wait">
           <motion.div
             key={current}
@@ -35,12 +41,26 @@ const ExperienceSection = () => {
             <ExperienceCard {...data[current]} />
           </motion.div>
         </AnimatePresence>
-        {isDesktop && <Button Icon={ArrowCircleRight} onClick={handleNext} />}
+        {isDesktop && (
+          <Button
+            variant="outline"
+            Icon={ArrowCircleRight}
+            onClick={handleNext}
+          />
+        )}
 
         {!isDesktop && (
           <div className="flex gap-8">
-            <Button Icon={ArrowCircleLeft} onClick={handlePrev} />
-            <Button Icon={ArrowCircleRight} onClick={handleNext} />
+            <Button
+              variant="outline"
+              Icon={ArrowCircleLeft}
+              onClick={handlePrev}
+            />
+            <Button
+              variant="outline"
+              Icon={ArrowCircleRight}
+              onClick={handleNext}
+            />
           </div>
         )}
       </div>
