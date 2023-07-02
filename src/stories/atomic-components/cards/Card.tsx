@@ -6,7 +6,7 @@ type CardProps = HTMLAttributes<HTMLDivElement>;
 
 const Card = (props: CardProps) => {
   const { className, ...rest } = props;
-  const cardCls = clsx("card", className);
+  const cardCls = clsx(className, "card");
 
   return (
     <div className={cardCls} {...rest}>

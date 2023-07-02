@@ -1,5 +1,5 @@
-import { Card } from "iconsax-react";
 import { useSystemTheme } from "../../../utils/hooks/useSystemTheme";
+import Card from "../../atomic-components/cards/Card";
 import Quote from "../../atomic-components/misc/Quote";
 import StyledList from "../../atomic-components/misc/StyledList";
 
