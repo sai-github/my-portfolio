@@ -1,17 +1,20 @@
 import clsx from "clsx";
 import useIsDesktop from "../../../utils/hooks/useIsDesktop";
 import "./footer.css";
+import React from "react";
+
+type FooterProps = React.HTMLAttributes<HTMLDivElement>;
 
 const CC_LOGO = {
   desktop: "https://licensebuttons.net/l/by/4.0/88x31.png",
   mobile: "https://licensebuttons.net/l/by/4.0/80x15.png",
 };
-const Footer = () => {
+const Footer = ({ className, ...rest }: FooterProps) => {
   const isDesktop = useIsDesktop();
   const textCls = clsx(isDesktop ? "subtitle" : "small"); // careful with color overrides from class as well
 
   return (
-    <div className="footer">
+    <div className={clsx(className, "footer")} {...rest}>
       <a
         rel="license noopener noreferrer"
         href="http://creativecommons.org/licenses/by/4.0/"

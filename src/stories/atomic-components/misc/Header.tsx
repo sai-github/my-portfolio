@@ -12,13 +12,19 @@ import { useState } from "react";
 import Button from "../buttons/Button";
 import { CloseCircle, MoreCircle } from "iconsax-react";
 
-interface HeaderProps {
+interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
   labels: string[];
   onNavigate?: (value: string, event: React.MouseEvent<HTMLDivElement>) => void;
   onLogoClick?: () => void;
 }
 
-const Header = ({ labels = [], onNavigate, onLogoClick }: HeaderProps) => {
+const Header = ({
+  labels = [],
+  onNavigate,
+  onLogoClick,
+  className,
+  ...rest
+}: HeaderProps) => {
   const theme = useSystemTheme();
   const isDesktop = useIsDesktop();
   const [open, setOpen] = useState(false);
@@ -47,7 +53,7 @@ const Header = ({ labels = [], onNavigate, onLogoClick }: HeaderProps) => {
   };
 
   return (
-    <header>
+    <header className={className} {...rest}>
       <div className={headerInnerContainer}>
         <img
           src={theme === "light" ? LightLogo : DarkLogo}
