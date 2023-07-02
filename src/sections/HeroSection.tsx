@@ -1,22 +1,46 @@
-import Header from "../stories/atomic-components/misc/Header";
+import useIsDesktop from "../utils/hooks/useIsDesktop";
+import "./hero-section.css";
 
-const HeroSection = () => {
+const MobileView = () => {
   return (
-    <section data-scroll-section className="h-screen w-screen">
-      <Header labels={["Home", "Experience", "Contact Me"]} />
-      <div className="inline-flex  flex-col items-start justify-start gap-10">
-        <div className="self-stretch">
-          <span className="text-[60px] font-bold text-black">Developer & </span>
-          <span className="text-[60px] font-bold">Designer</span>
-        </div>
-        <div className="self-stretch text-[30px] font-medium text-black">
+    <div className="mb-24 flex flex-col justify-end  gap-4 text-center">
+      <h4>
+        <span className="">Developer & </span>
+        <span className="">Designer</span>
+      </h4>
+      <h6>
+        Hi there 👋 <br />
+        Bhargava Ramu here, crafting the intersection of Design and Code
+      </h6>
+      <div className="small">📍Bengaluru, India</div>
+    </div>
+  );
+};
+
+const DesktopView = () => {
+  return (
+    <div className="wrapper">
+      <div className="intro flex flex-col justify-center gap-10">
+        <h2>
+          <span className="">Developer & </span>
+          <span className="">Designer</span>
+        </h2>
+        <h4 className="max-w-xl">
           Hi there 👋 <br />
           Bhargava Ramu here, crafting the intersection of Design and Code
-        </div>
-        <div className="self-stretch text-[18px] font-normal text-black">
-          📍Bengaluru, India
-        </div>
+        </h4>
+        <div className="subtitle">📍Bengaluru, India</div>
       </div>
+    </div>
+  );
+};
+
+const HeroSection = () => {
+  const isDesktop = useIsDesktop();
+
+  return (
+    <section data-scroll-section className="my-section">
+      {isDesktop ? <DesktopView /> : <MobileView />}
     </section>
   );
 };

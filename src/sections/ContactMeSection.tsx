@@ -5,7 +5,7 @@ const ContactMeSection = () => {
     console.log(name, string);
   };
   return (
-    <section className="h-screen w-screen" data-scroll-section>
+    <section className="my-section items-center" data-scroll-section>
       <ContactMe {...data} onSend={handleSend} />
     </section>
   );

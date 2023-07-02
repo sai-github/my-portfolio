@@ -98,3 +98,22 @@
     color: var(--current-text);
   }
 }
+
+/* Apply a light background color to odd sections */
+section:nth-child(even) {
+  background-color: var(
+    --current-background
+  ); /* You can change this to the light color you prefer */
+}
+
+/* Apply a secondary background color to even sections */
+section:nth-child(odd) {
+  background-color: var(
+    --current-secondary
+  ); /* You can change this to the secondary color you prefer */
+}
+
+/** Default section style */
+section.my-section {
+  @apply flex h-screen w-screen justify-center px-8 lg:px-0;
+}
