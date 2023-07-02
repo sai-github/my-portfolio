@@ -16,3 +16,12 @@ export interface IExperience {
   company: string;
   data: IExperienceData;
 }
+
+export interface IContactInfo {
+  avatar: string;
+  status: string;
+  social: {
+    githubURL: string;
+    linkedinURL: string;
+  };
+}
