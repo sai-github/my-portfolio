@@ -15,6 +15,7 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "iconsax-react": "^0.0.8",
+    "locomotive-scroll": "^4.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "source-map-explorer": "^2.5.3"
@@ -29,6 +30,7 @@
     "@storybook/react-vite": "^7.0.23",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/aria-query": "^5.0.1",
+    "@types/locomotive-scroll": "^4.1.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
@@ -43,6 +45,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
     "prop-types": "^15.8.1",
+    "sass": "^1.63.6",
     "storybook": "^7.0.23",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
