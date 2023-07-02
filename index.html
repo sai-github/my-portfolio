@@ -35,21 +35,32 @@
       }
 
       #spinner-container {
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* bg-color hardcoded as per our theme */
+        height: 100vh;
         background-color: #fdf7f1;
+        position: relative; /* Required for absolute positioning of children */
       }
 
       .engine-loader {
+        position: absolute; /* Position the engine absolutely */
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Offset for perfect center */
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 100px;
-        margin-top: 1rem;
+      }
+
+      .below-engine-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: calc(
+          var(--engine-size) + 2 * var(--engine-border-width) + 10rem
+        ); /* Margin equal to engine's height + border widths + extra space */
       }
 
       .engine-wrapper {
@@ -81,7 +92,6 @@
 
       .engine-shadow {
         position: relative;
-        top: 1rem;
         width: var(--engine-shadow-size);
         height: var(--engine-shadow-size);
         border-radius: 50%;
@@ -246,14 +256,17 @@
         <div class="engine-shadow"></div>
       </div>
 
-      <div id="welcome-msg" style="display: none">
-        Welcome Aboard, Passengers !
+      <!-- Content Below Engine -->
+      <div class="below-engine-content">
+        <!-- Welcome msg when react app is available -->
+        <div id="welcome-msg" style="display: none">
+          Welcome Aboard, Passengers !
+        </div>
+        <!-- Button to proceed, initially hidden -->
+        <button id="proceed-button" style="display: none" class="btn-primary">
+          Proceed
+        </button>
       </div>
-
-      <!-- Button to proceed, initially hidden -->
-      <button id="proceed-button" style="display: none" class="btn-primary">
-        Proceed
-      </button>
     </div>
 
     <!-- React root, initially hidden -->
