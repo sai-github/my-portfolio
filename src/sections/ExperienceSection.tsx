@@ -8,7 +8,11 @@ import ExperienceCard from "@starkit/molecules/experience-card/ExperienceCard";
 import Button from "@starkit/atomic-components/buttons/Button";
 import useIsDesktop from "../utils/hooks/useIsDesktop";
 
-const ExperienceSection = () => {
+interface ExperienceSectionProps {
+  id?: string;
+}
+
+const ExperienceSection = ({ id }: ExperienceSectionProps) => {
   const isDesktop = useIsDesktop();
   const [current, setCurrent] = useState(0);
 
@@ -21,7 +25,7 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section className="my-section items-start" data-scroll-section>
+    <section id={id} className="my-section items-start" data-scroll-section>
       <div className="mt-32 flex flex-col items-center justify-center gap-6 md:flex-row lg:mt-64">
         {isDesktop && (
           <Button
