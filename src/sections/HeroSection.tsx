@@ -6,7 +6,7 @@ import "./hero-section.css";
 
 const MobileView = () => {
   return (
-    <div className="z-10 mb-24 flex flex-col  justify-end gap-4 text-center">
+    <div className="pointer-events-none z-10 mb-24 flex  flex-col justify-end gap-4 text-center">
       <h4>
         <span className="">Developer & </span>
         <span className="text-gradient">Designer</span>
@@ -22,7 +22,7 @@ const MobileView = () => {
 
 const DesktopView = () => {
   return (
-    <div className="wrapper z-10">
+    <div className="wrapper pointer-events-none z-10">
       <div className="intro flex flex-col justify-center gap-10">
         <h2>
           <span className="">Developer & </span>
@@ -50,8 +50,7 @@ const HeroSection = ({ id }: HeroSectionProps) => {
       {isDesktop ? <DesktopView /> : <MobileView />}
       <div className="absolute h-full w-full">
         <Suspense fallback={<div>Loading...</div>}>
-          {/* <Spline scene="https://prod.spline.design/R3qmL30wVLy-6YRF/scene.splinecode" /> */}
-          {/* <Spline scene="https://prod.spline.design/Ulifv7HR2iHjl6Rb/scene.splinecode" /> */}
+          <Spline scene="https://prod.spline.design/R3qmL30wVLy-6YRF/scene.splinecode" />
         </Suspense>
       </div>
     </section>
