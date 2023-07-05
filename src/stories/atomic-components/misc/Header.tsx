@@ -2,15 +2,13 @@ import LightLogo from "../../../assets/ramu-light.svg";
 import DarkLogo from "../../../assets/ramu-dark.svg";
 import Tab from "./Tab";
 
-import { useSystemTheme } from "../../../utils/hooks/useSystemTheme";
-
 import "./header.css";
-import useIsDesktop from "../../../utils/hooks/useIsDesktop";
 import clsx from "clsx";
 import Menu, { MenuList } from "./Menu";
 import { useState } from "react";
 import Button from "../buttons/Button";
 import { CloseCircle, MoreCircle } from "iconsax-react";
+import { useIsDesktop, useSystemTheme } from "../../../utils/hooks";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
   labels: string[];

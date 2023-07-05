@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import clsx from "clsx";
 
 import Card from "../../atomic-components/cards/Card";
-import useIsDesktop from "../../../utils/hooks/useIsDesktop";
 import Button from "../../atomic-components/buttons/Button";
 import Input from "../../atomic-components/inputs/Input";
 import TextArea from "../../atomic-components/inputs/TextArea";
@@ -10,6 +9,7 @@ import Divider from "../../atomic-components/misc/Divider";
 import Quote from "../../atomic-components/misc/Quote";
 
 import { Send } from "iconsax-react";
+import { useIsDesktop } from "../../../utils/hooks";
 
 interface ContactMeProps {
   avatar: string;

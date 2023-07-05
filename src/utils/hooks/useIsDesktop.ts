@@ -1,4 +1,3 @@
-// useIsDesktop.js
 import { useEffect, useState } from "react";
 import { breakpoints } from "../constants/breakpoints";
 

@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import useIsDesktop from "../../../utils/hooks/useIsDesktop";
 import "./footer.css";
 import React from "react";
+import { useIsDesktop } from "../../../utils/hooks";
 
 type FooterProps = React.HTMLAttributes<HTMLDivElement>;
 

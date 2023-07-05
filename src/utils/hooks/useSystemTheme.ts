@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useSystemTheme = () => {
+const useSystemTheme = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
@@ -19,3 +19,5 @@ export const useSystemTheme = () => {
 
   return theme;
 };
+
+export default useSystemTheme;
