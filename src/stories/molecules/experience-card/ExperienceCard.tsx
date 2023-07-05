@@ -1,4 +1,4 @@
-import { useSystemTheme } from "../../../utils/hooks/useSystemTheme";
+import { useSystemTheme } from "../../../utils/hooks";
 import Card from "../../atomic-components/cards/Card";
 import Quote from "../../atomic-components/misc/Quote";
 import StyledList from "../../atomic-components/misc/StyledList";
