@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.375",
+    "@splinetool/runtime": "^0.9.377",
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.18",
     "iconsax-react": "^0.0.8",
