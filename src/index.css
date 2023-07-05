@@ -115,5 +115,9 @@ section:nth-child(odd) {
 
 /** Default section style */
 section.my-section {
-  @apply flex h-screen w-screen justify-center px-8 lg:px-0;
+  @apply flex h-screen w-screen flex-col items-center gap-8 px-8 lg:px-0;
+}
+
+section.my-rounded-section canvas {
+  @apply rounded-3xl sm:rounded-none;
 }

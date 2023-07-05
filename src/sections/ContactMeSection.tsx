@@ -10,7 +10,7 @@ const ContactMeSection = ({ id }: ContactMeSectionProps) => {
     console.log(name, string);
   };
   return (
-    <section id={id} className="my-section items-center" data-scroll-section>
+    <section id={id} className="my-section justify-center" data-scroll-section>
       <ContactMe {...data} onSend={handleSend} />
     </section>
   );

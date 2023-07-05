@@ -6,7 +6,9 @@ import { experienceList as data } from "../content/experience-data";
 
 import ExperienceCard from "@starkit/molecules/experience-card/ExperienceCard";
 import Button from "@starkit/atomic-components/buttons/Button";
-import useIsDesktop from "../utils/hooks/useIsDesktop";
+import { useCustomSplineLoad, useIsDesktop } from "../utils/hooks";
+
+import Spline from "@splinetool/react-spline";
 
 interface ExperienceSectionProps {
   id?: string;
@@ -14,6 +16,7 @@ interface ExperienceSectionProps {
 
 const ExperienceSection = ({ id }: ExperienceSectionProps) => {
   const isDesktop = useIsDesktop();
+  const { ref, renderedOnce } = useCustomSplineLoad(0.99);
   const [current, setCurrent] = useState(0);
 
   const handleNext = () => {
@@ -25,8 +28,13 @@ const ExperienceSection = ({ id }: ExperienceSectionProps) => {
   };
 
   return (
-    <section id={id} className="my-section items-start" data-scroll-section>
-      <div className="mt-32 flex flex-col items-center justify-center gap-6 md:flex-row lg:mt-64">
+    <section
+      ref={ref}
+      id={id}
+      className="my-section my-rounded-section items-start sm:justify-evenly"
+      data-scroll-section
+    >
+      <div className="z-10 mt-32 flex flex-col items-center justify-center gap-6 md:flex-row lg:mt-64">
         {isDesktop && (
           <Button
             variant="outline"
@@ -68,6 +76,12 @@ const ExperienceSection = ({ id }: ExperienceSectionProps) => {
           </div>
         )}
       </div>
+
+      {renderedOnce && (
+        <div className="aspect-video w-full ">
+          <Spline scene="https://prod.spline.design/IIZ3CCuef7hWRwsS/scene.splinecode" />
+        </div>
+      )}
     </section>
   );
 };

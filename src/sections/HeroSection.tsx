@@ -1,8 +1,8 @@
-import React, { Suspense } from "react";
+import React from "react";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
-import useIsDesktop from "../utils/hooks/useIsDesktop";
 import "./hero-section.css";
+import { useCustomSplineLoad, useIsDesktop } from "../utils/hooks";
 
 const MobileView = () => {
   return (
@@ -44,15 +44,21 @@ interface HeroSectionProps {
 
 const HeroSection = ({ id }: HeroSectionProps) => {
   const isDesktop = useIsDesktop();
+  const { ref, renderedOnce } = useCustomSplineLoad();
 
   return (
-    <section id={id} data-scroll-section className="my-section">
+    <section
+      ref={ref}
+      id={id}
+      data-scroll-section
+      className="my-section justify-end sm:justify-center"
+    >
       {isDesktop ? <DesktopView /> : <MobileView />}
-      <div className="absolute h-full w-full">
-        <Suspense fallback={<div>Loading...</div>}>
+      {renderedOnce && (
+        <div className="absolute h-full w-full">
           <Spline scene="https://prod.spline.design/R3qmL30wVLy-6YRF/scene.splinecode" />
-        </Suspense>
-      </div>
+        </div>
+      )}
     </section>
   );
 };
