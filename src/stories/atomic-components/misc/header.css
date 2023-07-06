@@ -5,11 +5,13 @@
     @apply p-4 md:px-12 md:py-6;
   }
   .header-inner-container {
-    @apply m-auto flex flex-row justify-between rounded-3xl border-2 px-6 py-4 shadow-card-light dark:shadow-card-dark;
+    @apply m-auto flex flex-row items-center justify-between rounded-3xl border-2 px-6 py-4;
     border-color: var(--current-text);
   }
 
+  .header-inner-container,
   [data-theme="light"] .header-inner-container {
+    @apply shadow-card-light;
     background-color: var(--current-primary);
   }
 
@@ -17,6 +19,7 @@
     @apply h-8 w-32 bg-contain bg-no-repeat;
   }
 
+  .logo,
   [data-theme="light"] .logo {
     background-image: url("./../../../assets/ramu-light.svg");
   }
@@ -26,14 +29,25 @@
   }
 
   .header-inner-container.desktop {
-    @apply m-auto flex max-w-7xl flex-row justify-between rounded-3xl border-2 px-8 py-6 shadow-card-light dark:shadow-card-dark;
+    @apply max-w-7xl px-8 py-6;
   }
 
   .menu-tabs {
     @apply flex flex-row justify-end gap-4;
   }
 
+  @media (prefers-color-scheme: dark) {
+    .header-inner-container {
+      @apply shadow-card-dark;
+      background-color: var(--current-secondary);
+    }
+
+    .logo {
+      background-image: url("./../../../assets/ramu-dark.svg");
+    }
+  }
   [data-theme="dark"] .header-inner-container {
+    @apply shadow-card-dark;
     background-color: var(--current-secondary);
   }
 
