@@ -98,6 +98,10 @@
     @apply text-xs font-medium uppercase tracking-widest;
     color: var(--current-text);
   }
+
+  .body-sm {
+    @apply text-[14px] font-normal text-[var(--current-text)];
+  }
 }
 
 /* Apply a light background color to odd sections */
@@ -121,4 +125,14 @@ section.my-section {
 
 section.my-rounded-section canvas {
   @apply rounded-3xl sm:rounded-none;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
 }
