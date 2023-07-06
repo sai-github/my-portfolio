@@ -31,10 +31,10 @@ const ExperienceSection = ({ id }: ExperienceSectionProps) => {
     <section
       ref={ref}
       id={id}
-      className="my-section my-rounded-section items-start sm:justify-evenly"
+      className="my-section my-rounded-section items-start sm:justify-between"
       data-scroll-section
     >
-      <div className="z-10 mt-32 flex flex-col items-center justify-center gap-6 md:flex-row lg:mt-64">
+      <div className="z-10 mt-32 flex flex-col items-center justify-center gap-6 md:flex-row">
         {isDesktop && (
           <Button
             variant="outline"
@@ -50,7 +50,10 @@ const ExperienceSection = ({ id }: ExperienceSectionProps) => {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} //[0.25, 0.46, 0.45, 0.94]
           >
-            <ExperienceCard {...data[current]} />
+            <ExperienceCard
+              {...data[current]}
+              variant={isDesktop ? "small" : "large"}
+            />
           </motion.div>
         </AnimatePresence>
         {isDesktop && (
@@ -78,7 +81,7 @@ const ExperienceSection = ({ id }: ExperienceSectionProps) => {
       </div>
 
       {renderedOnce && (
-        <div className="aspect-video w-full ">
+        <div className="aspect-video w-full sm:aspect-auto ">
           <Spline scene="https://prod.spline.design/IIZ3CCuef7hWRwsS/scene.splinecode" />
         </div>
       )}
