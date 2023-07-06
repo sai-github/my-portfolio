@@ -13,6 +13,14 @@
     background-color: var(--current-primary);
   }
 
+  .logo {
+    @apply h-8 w-32 bg-contain bg-no-repeat;
+  }
+
+  [data-theme="light"] .logo {
+    background-image: url("./../../../assets/ramu-light.svg");
+  }
+
   .header-inner-container.open {
     @apply rounded-b-none;
   }
@@ -27,5 +35,9 @@
 
   [data-theme="dark"] .header-inner-container {
     background-color: var(--current-secondary);
+  }
+
+  [data-theme="dark"] .logo {
+    background-image: url("./../../../assets/ramu-dark.svg");
   }
 }

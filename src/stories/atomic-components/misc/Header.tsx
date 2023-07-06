@@ -1,14 +1,13 @@
-import LightLogo from "../../../assets/ramu-light.svg";
-import DarkLogo from "../../../assets/ramu-dark.svg";
-import Tab from "./Tab";
-
 import "./header.css";
-import clsx from "clsx";
-import Menu, { MenuList } from "./Menu";
 import { useState } from "react";
+import clsx from "clsx";
+
+import Menu, { MenuList } from "./Menu";
+import Tab from "./Tab";
 import Button from "../buttons/Button";
+
 import { CloseCircle, MoreCircle } from "iconsax-react";
-import { useIsDesktop, useSystemTheme } from "../../../utils/hooks";
+import { useIsDesktop } from "../../../utils/hooks";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
   labels: string[];
@@ -23,7 +22,6 @@ const Header = ({
   className,
   ...rest
 }: HeaderProps) => {
-  const { theme } = useSystemTheme();
   const isDesktop = useIsDesktop();
   const [open, setOpen] = useState(false);
   const [currActive, setCurrActive] = useState<string | null>(() => {
@@ -53,12 +51,12 @@ const Header = ({
   return (
     <header className={className} {...rest}>
       <div className={headerInnerContainer}>
-        <img
+        <div
           className="logo"
-          src={theme === "light" ? LightLogo : DarkLogo}
-          alt="plugin"
+          role="img"
+          aria-label="Logo"
           onClick={onLogoClick}
-        />
+        ></div>
 
         {isDesktop ? (
           <div className="menu-tabs">
