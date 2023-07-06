@@ -19,7 +19,7 @@
     @apply cursor-not-allowed opacity-25;
   }
 
-  .input::placeholder {
+  [data-theme="light"] .input::placeholder {
     @apply text-shades-disabledBlack;
   }
 
@@ -27,7 +27,7 @@
     @apply bg-shades-lightGrey;
   }
 
-  .input:focus {
+  [data-theme="light"] .input:focus {
     @apply border-light-accent  bg-shades-lightGrey ring-2 ring-light-secondary;
   }
 
@@ -35,14 +35,12 @@
     @apply flex min-w-[192px] flex-col gap-1;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .input::placeholder,
-    .input:hover {
-      @apply text-shades-disabledBlack;
-    }
+  [data-theme="dark"] .input::placeholder,
+  .input:hover {
+    @apply text-shades-disabledBlack;
+  }
 
-    .input:focus {
-      @apply border-dark-text  bg-shades-lightGrey text-shades-disabledBlack ring-2 ring-light-primary;
-    }
+  [data-theme="dark"] .input:focus {
+    @apply border-dark-text  bg-shades-lightGrey text-shades-disabledBlack ring-2 ring-light-primary;
   }
 }

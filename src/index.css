@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+  /* initially respect user theme */
   :root {
     --light-background: #fdf7f1;
     --light-text: #170c03;

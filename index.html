@@ -13,6 +13,14 @@
     <title>Ramu Dev</title>
 
     <style>
+      :root {
+        --temp-background: #fdf7f1;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --temp-background: #090a00;
+        }
+      }
       body {
         margin: 0;
       }
@@ -40,7 +48,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #fdf7f1;
+        background-color: var(--temp-background);
         position: relative; /* Required for absolute positioning of children */
       }
 

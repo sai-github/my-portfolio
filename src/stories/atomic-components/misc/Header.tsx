@@ -23,7 +23,7 @@ const Header = ({
   className,
   ...rest
 }: HeaderProps) => {
-  const theme = useSystemTheme();
+  const { theme } = useSystemTheme();
   const isDesktop = useIsDesktop();
   const [open, setOpen] = useState(false);
   const [currActive, setCurrActive] = useState<string | null>(() => {
@@ -54,6 +54,7 @@ const Header = ({
     <header className={className} {...rest}>
       <div className={headerInnerContainer}>
         <img
+          className="logo"
           src={theme === "light" ? LightLogo : DarkLogo}
           alt="plugin"
           onClick={onLogoClick}

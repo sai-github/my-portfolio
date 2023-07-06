@@ -2,7 +2,12 @@ import React from "react";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 import "./hero-section.css";
-import { useCustomSplineLoad, useIsDesktop } from "../utils/hooks";
+import {
+  useCustomSplineLoad,
+  useIsDesktop,
+  useSystemTheme,
+} from "../utils/hooks";
+import { Application, SplineEvent } from "@splinetool/runtime";
 
 const MobileView = () => {
   return (
@@ -44,7 +49,35 @@ interface HeroSectionProps {
 
 const HeroSection = ({ id }: HeroSectionProps) => {
   const isDesktop = useIsDesktop();
+  const { theme, setTheme } = useSystemTheme();
+
   const { ref, renderedOnce } = useCustomSplineLoad();
+
+  // onload check if the view should be desktop/mobile
+  const onLoad = (spline: Application) => {
+    const room = spline.findObjectByName("Room Object");
+    const night = spline.findObjectByName("Night");
+
+    // switch theme state
+    if (theme === "dark") {
+      // the state are defined in spline to handle this action on night button
+      night?.emitEvent("mouseDown");
+    }
+
+    // switch to mobile state
+    if (!isDesktop) {
+      room?.emitEvent("keyDown");
+    }
+  };
+
+  // handle theme switch
+  const handleThemeToggle = (e: SplineEvent) => {
+    if (e.target.name === "Day") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
 
   return (
     <section
@@ -54,9 +87,14 @@ const HeroSection = ({ id }: HeroSectionProps) => {
       className="my-section justify-end sm:justify-center"
     >
       {isDesktop ? <DesktopView /> : <MobileView />}
+
       {renderedOnce && (
         <div className="absolute h-full w-full">
-          <Spline scene="https://prod.spline.design/R3qmL30wVLy-6YRF/scene.splinecode" />
+          <Spline
+            scene="https://prod.spline.design/R3qmL30wVLy-6YRF/scene.splinecode"
+            onLoad={onLoad}
+            onMouseDown={handleThemeToggle}
+          />
         </div>
       )}
     </section>

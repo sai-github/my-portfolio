@@ -17,7 +17,11 @@ const useSystemTheme = () => {
     };
   }, []);
 
-  return theme;
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
+
+  return { theme, setTheme };
 };
 
 export default useSystemTheme;

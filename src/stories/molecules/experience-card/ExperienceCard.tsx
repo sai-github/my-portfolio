@@ -28,7 +28,7 @@ const ExperienceCard = ({
   company,
   data,
 }: ExperienceCardProps) => {
-  const theme = useSystemTheme();
+  const { theme } = useSystemTheme();
 
   return (
     <Card className="flex max-w-sm flex-col gap-4 p-4 md:p-6">

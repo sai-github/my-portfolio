@@ -6,8 +6,11 @@
   }
   .header-inner-container {
     @apply m-auto flex flex-row justify-between rounded-3xl border-2 px-6 py-4 shadow-card-light dark:shadow-card-dark;
-    background-color: var(--current-primary);
     border-color: var(--current-text);
+  }
+
+  [data-theme="light"] .header-inner-container {
+    background-color: var(--current-primary);
   }
 
   .header-inner-container.open {
@@ -18,13 +21,11 @@
     @apply m-auto flex max-w-7xl flex-row justify-between rounded-3xl border-2 px-8 py-6 shadow-card-light dark:shadow-card-dark;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .header-inner-container {
-      background-color: var(--current-secondary);
-    }
-  }
-
   .menu-tabs {
     @apply flex flex-row justify-end gap-4;
+  }
+
+  [data-theme="dark"] .header-inner-container {
+    background-color: var(--current-secondary);
   }
 }
