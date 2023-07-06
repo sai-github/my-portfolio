@@ -30,7 +30,7 @@ export const Body = () => (
   </div>
 );
 export const BodySmall = () => (
-  <div className="text-[14px] font-normal text-black">
+  <div className="body-sm">
     Once upon a time, in a pixelated kingdom far, far away, the quick brown fox
     joined forces with the lazy dog to create design wonders that made the world
     go 'Wow!
