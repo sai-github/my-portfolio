@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const useIntersectionObserver = (
   ref: React.Ref<HTMLElement>,
-  threshold: number
+  { threshold, rootMargin = "0px" }: { threshold: number; rootMargin: string }
 ) => {
   const [isIntersecting, setIntersecting] = useState(false);
 
@@ -15,7 +15,7 @@ const useIntersectionObserver = (
 
     const observer = new IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting),
-      { threshold }
+      { threshold, rootMargin }
     );
 
     if (currentRef) {
@@ -27,7 +27,7 @@ const useIntersectionObserver = (
         observer.unobserve(currentRef);
       }
     };
-  }, [ref, threshold]);
+  }, [ref, threshold, rootMargin]);
 
   return { isIntersecting };
 };

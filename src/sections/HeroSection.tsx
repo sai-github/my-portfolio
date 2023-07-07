@@ -58,7 +58,7 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
     const { theme, setTheme } = useSystemTheme();
 
     useSectionInView(ref, onInView);
-    const { renderedOnce } = useCustomSplineLoad(ref, 0.5);
+    const { renderedOnce } = useCustomSplineLoad(ref, { threshold: 0.5 });
 
     // onload check if the view should be desktop/mobile
     const onLoad = (spline: Application) => {
@@ -87,7 +87,10 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
     };
 
     return (
-      <section ref={ref} className="my-section justify-end sm:justify-center">
+      <section
+        ref={ref}
+        className="my-section relative justify-end sm:justify-center"
+      >
         {isDesktop ? <DesktopView /> : <MobileView />}
 
         {renderedOnce && (

@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import useIntersectionObserver from "./useIntersectingObserver";
 
-const useCustomSplineLoad = (ref: React.Ref<HTMLElement>, threshold = 1) => {
-  const { isIntersecting } = useIntersectionObserver(ref, threshold);
+const useCustomSplineLoad = (
+  ref: React.Ref<HTMLElement>,
+  { threshold = 0.5, rootMargin = "0px" }
+) => {
+  const { isIntersecting } = useIntersectionObserver(ref, {
+    threshold,
+    rootMargin,
+  });
   const [renderedOnce, setRenderedOnce] = useState(false);
 
   useEffect(() => {

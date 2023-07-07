@@ -144,14 +144,14 @@
   }
 }
 
-/* Apply a seconday background color to odd sections */
+/* Apply a light background color to even sections */
 section.my-section:nth-child(even) {
-  background-color: var(--current-secondary);
+  background-color: var(--current-background);
 }
 
-/* Apply a light background color to even sections */
+/* Apply a seconday background color to odd sections */
 section.my-section:nth-child(odd) {
-  background-color: var(--current-background);
+  background-color: var(--current-secondary);
 }
 
 /** Default section style */

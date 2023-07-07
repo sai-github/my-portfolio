@@ -20,7 +20,9 @@ interface ExperienceSectionProps {
 const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
   ({ onInView }, ref) => {
     const isDesktop = useIsDesktop();
-    const { renderedOnce } = useCustomSplineLoad(ref, 0.99);
+    const { renderedOnce } = useCustomSplineLoad(ref, {
+      threshold: 0,
+    });
     const [current, setCurrent] = useState(0);
     useSectionInView(ref, onInView);
 
