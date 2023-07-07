@@ -23,6 +23,7 @@ const ColorBox = ({ color, name }: { color: string; name: string }) => (
         height: "50px",
         borderRadius: "8px",
         marginBottom: "16px",
+        border: "1px solid var(--current-text)",
       }}
     />
     <p className="small">{name}</p>
