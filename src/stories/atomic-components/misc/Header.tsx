@@ -11,12 +11,14 @@ import { useIsDesktop } from "../../../utils/hooks";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {
   labels: string[];
+  activeLabel?: string;
   onNavigate?: (value: string, event: React.MouseEvent<HTMLDivElement>) => void;
   onLogoClick?: () => void;
 }
 
 const Header = ({
   labels = [],
+  activeLabel = labels[0],
   onNavigate,
   onLogoClick,
   className,
@@ -24,13 +26,6 @@ const Header = ({
 }: HeaderProps) => {
   const isDesktop = useIsDesktop();
   const [open, setOpen] = useState(false);
-  const [currActive, setCurrActive] = useState<string | null>(() => {
-    if (labels.length > 0) {
-      return labels[0];
-    }
-
-    return null;
-  });
 
   const headerInnerContainer = clsx("header-inner-container", {
     desktop: isDesktop,
@@ -41,7 +36,6 @@ const Header = ({
     value: string,
     e: React.MouseEvent<HTMLDivElement>
   ) => {
-    setCurrActive(value);
     if (onNavigate) {
       onNavigate(value, e);
       setOpen(false); // only needed when in mobile view
@@ -62,7 +56,7 @@ const Header = ({
           <div className="menu-tabs">
             {labels.map((label) => (
               <Tab
-                active={currActive === label}
+                active={label === activeLabel}
                 key={label}
                 label={label}
                 onClick={(e) => {
