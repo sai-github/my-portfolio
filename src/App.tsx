@@ -44,8 +44,6 @@ function App() {
   };
 
   const handleActiveSection = (value: SECTIONS) => {
-    console.log("[App]", value);
-
     setActiveSection(value);
   };
 
