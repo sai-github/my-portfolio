@@ -31,8 +31,8 @@ function handleReactAppReady() {
   // Handle proceed button click
   if (proceedButton && spinnerContainer && rootElement) {
     proceedButton.addEventListener("click", () => {
-      // Hide spinner container
-      spinnerContainer.style.display = "none";
+      // Remove the spinner element from its parent
+      spinnerContainer.remove();
       // Show React App
       rootElement.style.display = "block";
       // Tell React that content is now visible

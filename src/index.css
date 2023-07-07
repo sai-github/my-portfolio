@@ -35,6 +35,24 @@
     }
   }
 
+  :root {
+    --scroll-size: 8px;
+    --scroll-radius: 16px;
+    --scroll-track: rgba(0, 0, 0, 0.1);
+    --scroll-thumb: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.3) 20%,
+      transparent 20%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.3) 60%,
+      transparent 60%,
+      transparent 80%,
+      rgba(255, 255, 255, 0.3) 80%
+    );
+    --scroll-thumb-color: var(--current-accent);
+  }
+
   [data-theme="light"] {
     --current-background: var(--light-background);
     --current-text: var(--light-text);
@@ -51,10 +69,32 @@
     --current-accent: var(--dark-accent);
   }
 
+  /* For Chrome, Safari, and Opera */
+  ::-webkit-scrollbar {
+    width: var(--scroll-size);
+    height: var(--scroll-size);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+    border-radius: var(--scroll-radius);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-image: var(--scroll-thumb);
+    background-color: var(--scroll-thumb-color);
+    border-radius: var(--scroll-radius);
+  }
+
   body {
     @apply font-telex text-base font-normal;
     color: var(--current-text);
     background-color: var(--current-background);
+    scroll-behavior: smooth;
+
+    /* For Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb-color) var(--scroll-track);
   }
 
   a {
@@ -104,18 +144,14 @@
   }
 }
 
-/* Apply a light background color to odd sections */
-section:nth-child(even) {
-  background-color: var(
-    --current-background
-  ); /* You can change this to the light color you prefer */
+/* Apply a seconday background color to odd sections */
+section.my-section:nth-child(even) {
+  background-color: var(--current-secondary);
 }
 
-/* Apply a secondary background color to even sections */
-section:nth-child(odd) {
-  background-color: var(
-    --current-secondary
-  ); /* You can change this to the secondary color you prefer */
+/* Apply a light background color to even sections */
+section.my-section:nth-child(odd) {
+  background-color: var(--current-background);
 }
 
 /** Default section style */
@@ -125,14 +161,4 @@ section.my-section {
 
 section.my-rounded-section canvas {
   @apply rounded-3xl sm:rounded-none;
-}
-
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background: var(--red);
-  transform-origin: 0%;
 }

@@ -1,19 +1,26 @@
 import ContactMe from "@starkit/molecules/contact-me/ContactMe";
 import { contactInfo as data } from "../content/contact-me-data";
+import { forwardRef } from "react";
+import { useSectionInView } from "../utils/hooks";
 
 interface ContactMeSectionProps {
-  id?: string;
+  onInView: () => void;
 }
 
-const ContactMeSection = ({ id }: ContactMeSectionProps) => {
-  const handleSend = (name: string, string: string) => {
-    console.log(name, string);
-  };
-  return (
-    <section id={id} className="my-section justify-center" data-scroll-section>
-      <ContactMe {...data} onSend={handleSend} />
-    </section>
-  );
-};
+const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(
+  ({ onInView }, ref) => {
+    useSectionInView(ref, onInView);
+
+    const handleSend = (name: string, string: string) => {
+      console.log(name, string);
+    };
+
+    return (
+      <section ref={ref} className="my-section justify-center">
+        <ContactMe {...data} onSend={handleSend} />
+      </section>
+    );
+  }
+);
 
 export default ContactMeSection;

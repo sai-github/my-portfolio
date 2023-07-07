@@ -2,7 +2,7 @@
 
 @layer components {
   .footer {
-    @apply flex items-center justify-between rounded-t-lg px-4 py-2.5 sm:p-6;
+    @apply z-50 flex items-center justify-between rounded-t-lg px-4 py-2.5 sm:p-6;
   }
   .footer,
   [data-theme="light"] .footer {

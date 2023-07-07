@@ -1,11 +1,18 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
-const useIntersectionObserver = (threshold: number) => {
+const useIntersectionObserver = (
+  ref: React.Ref<HTMLElement>,
+  threshold: number
+) => {
   const [isIntersecting, setIntersecting] = useState(false);
-  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const currentRef = ref.current;
+    let currentRef: HTMLElement | null = null;
+
+    if (ref && "current" in ref) {
+      currentRef = ref.current;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting),
       { threshold }
@@ -20,9 +27,9 @@ const useIntersectionObserver = (threshold: number) => {
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold]);
+  }, [ref, threshold]);
 
-  return { ref, isIntersecting };
+  return { isIntersecting };
 };
 
 export default useIntersectionObserver;

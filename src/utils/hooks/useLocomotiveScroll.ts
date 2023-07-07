@@ -6,23 +6,26 @@ const useLocomotiveScroll = () => {
   const scrollInstance = useRef<LocomotiveScroll | null>(null);
 
   useEffect(() => {
-    const handleContentVisible = () => {
-      if (scrollRef.current) {
-        scrollInstance.current = new LocomotiveScroll({
-          el: scrollRef.current,
-          smooth: true,
-        });
+    if (scrollRef.current) {
+      scrollInstance.current = new LocomotiveScroll({
+        el: scrollRef.current,
+        smooth: true,
+      });
 
-        // Force Locomotive Scroll to recalculate heights
-        scrollInstance.current.update();
-      }
-    };
-    window.addEventListener("react-content-visible", handleContentVisible);
+      console.log("useLocomotiveScroll mounted");
+
+      // Force Locomotive Scroll to recalculate heights
+      scrollInstance.current.update();
+
+      scrollInstance.current.on("call", (value) => {
+        // value will be 'section1', 'section2', or 'section3' depending on which section is in view
+        // You can use this value to update your header
+        console.log("-------On call", value);
+      });
+    }
 
     // Clean up the Locomotive Scroll instance when component unmounts
     return () => {
-      window.removeEventListener("react-content-visible", handleContentVisible);
-
       if (scrollInstance.current) {
         scrollInstance.current.destroy();
       }
