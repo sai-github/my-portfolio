@@ -114,6 +114,7 @@ const ContactMe = ({ avatar, status, social, onSend }: ContactMeProps) => {
         <img
           className="h-24 w-24 rounded-[64px] border-2  border-[var(--current-text)] md:h-32 md:w-32"
           src={avatar}
+          alt="Image of the ramu"
         />
         <Quote text={status} variant="small" align="center" />
         <div className="grid  grid-cols-2 gap-4">
