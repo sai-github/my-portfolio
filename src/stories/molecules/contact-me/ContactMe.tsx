@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 
 import Card from "../../atomic-components/cards/Card";
@@ -10,6 +10,17 @@ import Quote from "../../atomic-components/misc/Quote";
 
 import { Send } from "iconsax-react";
 import { useIsDesktop } from "../../../utils/hooks";
+
+const validator = (name: string, value: string) => {
+  let errorMsg = "";
+  if (!value) errorMsg = `${name} is required`;
+  return errorMsg;
+};
+
+type SenderInfo = {
+  name: string;
+  msg: string;
+};
 
 interface ContactMeProps {
   avatar: string;
@@ -30,14 +41,33 @@ const ContactMe = ({ avatar, status, social, onSend }: ContactMeProps) => {
     "gap-4 md:gap-8"
   );
 
-  const [senderInfo, setSenderInfo] = useState({ name: "", msg: "" });
+  const [senderInfo, setSenderInfo] = useState<SenderInfo>({
+    name: "",
+    msg: "",
+  });
+
+  const [errors, setErrors] = useState<SenderInfo>({
+    name: "",
+    msg: "",
+  });
+
+  useEffect(() => {
+    (Object.keys(senderInfo) as (keyof SenderInfo)[]).forEach((key) => {
+      const errorMsg = validator(key, senderInfo[key]);
+      setErrors((prev) => ({ ...prev, [key]: errorMsg }));
+    });
+  }, [senderInfo]);
 
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
-    setSenderInfo((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setSenderInfo((prev) => ({ ...prev, [name]: value }));
+
+    const errorMsg = validator(name, value);
+    setErrors((prev) => ({ ...prev, [name]: errorMsg }));
   };
 
   const handleClick = (name: string, msg: string) => {
@@ -48,6 +78,8 @@ const ContactMe = ({ avatar, status, social, onSend }: ContactMeProps) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
+  const isDisabled = Object.values(errors).some((error) => error);
+
   return (
     <Card className={cardCls}>
       <div className="flex flex-[1.5] flex-col items-center gap-4">
@@ -57,17 +89,22 @@ const ContactMe = ({ avatar, status, social, onSend }: ContactMeProps) => {
           label="Name"
           placeholder="Who's awesome? You!"
           onChange={handleChange}
+          hintType={errors.name ? "danger" : "success"}
+          hint={errors.name && "Oh oh... I still don't know your name!"}
         />
         <TextArea
           className="w-full"
           name="msg"
           label="Message"
-          placeholder="Your awesome thoughts here!"
+          placeholder="Your awesome thoughts here! You can also tell me how to reach you back"
           onChange={handleChange}
+          hintType={"danger"}
+          hint={errors.msg && "Hmm... I'm eager to hear your message!"}
         />
         <Button
           Icon={Send}
           onClick={() => handleClick(senderInfo.name, senderInfo.msg)}
+          disabled={isDisabled}
         >
           SEND
         </Button>

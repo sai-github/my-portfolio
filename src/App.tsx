@@ -51,7 +51,7 @@ function App() {
     <>
       <div ref={scrollRef} className="h-screen w-screen overflow-y-auto">
         <Header
-          className="fixed top-0 z-50 w-full"
+          className="fixed top-0 z-40 w-full"
           labels={[SECTIONS.HOME, SECTIONS.EXPERIENCE, SECTIONS.CONTACT_ME]}
           activeLabel={activeSection}
           onNavigate={handleNavigate}
