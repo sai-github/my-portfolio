@@ -1,7 +1,11 @@
-import { useState, forwardRef } from "react";
+import { useState, forwardRef, useRef } from "react";
 import Spline from "@splinetool/react-spline";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowCircleLeft, ArrowCircleRight } from "iconsax-react";
+import {
+  ArrowCircleLeft,
+  ArrowCircleRight,
+  RefreshLeftSquare,
+} from "iconsax-react";
 
 import { experienceList as data } from "../content/experience-data";
 
@@ -12,6 +16,7 @@ import {
   useIsDesktop,
   useSectionInView,
 } from "../utils/hooks";
+import { Application, SPEObject } from "@splinetool/runtime";
 
 interface ExperienceSectionProps {
   onInView: () => void;
@@ -25,6 +30,8 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
     });
     const [current, setCurrent] = useState(0);
     useSectionInView(ref, onInView);
+    const plane = useRef<SPEObject | null>(null);
+    const drone = useRef<SPEObject | null>(null);
 
     const handleNext = () => {
       setCurrent((prev) => (prev === data.length - 1 ? 0 : prev + 1));
@@ -32,6 +39,24 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
 
     const handlePrev = () => {
       setCurrent((prev) => (prev === 0 ? data.length - 1 : prev - 1));
+    };
+
+    // onload get plane obj
+    const onLoad = (spline: Application) => {
+      const planeObj = spline.findObjectByName("Plane Group");
+      const droneObj = spline.findObjectByName("Drone Cam");
+
+      if (planeObj && droneObj) {
+        plane.current = planeObj;
+        drone.current = droneObj;
+      }
+    };
+
+    const replayScene = () => {
+      if (plane && drone) {
+        plane.current?.emitEvent("mouseDown");
+        drone.current?.emitEvent("mouseDown");
+      }
     };
 
     return (
@@ -86,8 +111,16 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
         </div>
 
         {renderedOnce && (
-          <div className="mb-8 aspect-video w-full flex-shrink-0 lg:mb-0 lg:max-h-[50%]">
-            <Spline scene="https://prod.spline.design/IIZ3CCuef7hWRwsS/scene.splinecode" />
+          <div className="relative mb-8 aspect-video w-full flex-shrink-0 lg:mb-0 lg:max-h-[50%]">
+            <Spline
+              scene="https://prod.spline.design/IIZ3CCuef7hWRwsS/scene.splinecode"
+              onLoad={onLoad}
+            />
+            <Button
+              className="absolute bottom-0 right-0 mb-2 mr-2 sm:mb-8 sm:mr-8"
+              Icon={RefreshLeftSquare}
+              onClick={() => replayScene()}
+            />
           </div>
         )}
       </section>
