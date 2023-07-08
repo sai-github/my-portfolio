@@ -20,13 +20,13 @@ export const experienceList: IExperience[] = [
     logoLight: "/assets/airbus logo light.svg",
     logoDark: "/assets/airbus logo dark.svg",
     title: "Associate Engineer",
-    timeline: "July'18 - Sept'23",
+    timeline: "July'18 - Sept'20",
     company: "Airbus",
     data: {
       type: "list",
       list: [
         "Assisted in enhancing a web app for flight test planning and certification documentation",
-        "Instrumental in the successful migration of an existing tool to Angular 2.0 platform",
+        "Instrumental in the successful migration of an existing tool to Angular 2.0 framework",
       ],
     },
   },
