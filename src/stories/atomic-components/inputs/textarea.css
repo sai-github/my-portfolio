@@ -19,7 +19,7 @@
     @apply cursor-not-allowed opacity-25;
   }
 
-  .textarea::placeholder {
+  [data-theme="light"] .textarea::placeholder {
     @apply text-shades-disabledBlack;
   }
 
@@ -27,7 +27,7 @@
     @apply bg-shades-lightGrey;
   }
 
-  .textarea:focus {
+  [data-theme="light"] .textarea:focus {
     @apply border-light-accent bg-shades-lightGrey ring-2 ring-light-secondary;
   }
 
@@ -35,14 +35,12 @@
     @apply flex min-w-[192px] flex-col gap-1;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .textarea::placeholder,
-    .textarea:hover {
-      @apply text-shades-disabledBlack;
-    }
+  [data-theme="dark"] .textarea::placeholder,
+  .textarea:hover {
+    @apply text-shades-disabledBlack;
+  }
 
-    .textarea:focus {
-      @apply border-dark-text bg-shades-lightGrey text-shades-disabledBlack ring-2 ring-light-primary;
-    }
+  [data-theme="dark"] .textarea:focus {
+    @apply border-dark-text bg-shades-lightGrey text-shades-disabledBlack ring-2 ring-light-primary;
   }
 }
