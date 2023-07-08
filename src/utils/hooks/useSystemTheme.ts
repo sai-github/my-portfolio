@@ -1,27 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 const useSystemTheme = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = () => {
-      setTheme(mediaQuery.matches ? "dark" : "light");
-    };
-
-    mediaQuery.addEventListener("change", handleChange);
-    handleChange();
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleChange);
-    };
-  }, []);
+  const { theme, toggleTheme, updateTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
-  return { theme, setTheme };
+  return { theme, toggleTheme, updateTheme };
 };
 
 export default useSystemTheme;

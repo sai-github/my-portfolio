@@ -55,7 +55,7 @@ interface HeroSectionProps {
 const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
   ({ onInView }, ref) => {
     const isDesktop = useIsDesktop();
-    const { theme, setTheme } = useSystemTheme();
+    const { theme, updateTheme } = useSystemTheme();
 
     useSectionInView(ref, onInView);
     const { renderedOnce } = useCustomSplineLoad(ref, { threshold: 0.5 });
@@ -80,9 +80,9 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
     // handle theme switch
     const handleThemeToggle = (e: SplineEvent) => {
       if (e.target.name === "Day") {
-        setTheme("light");
+        updateTheme("light");
       } else {
-        setTheme("dark");
+        updateTheme("dark");
       }
     };
 

@@ -7,6 +7,7 @@ import ContactMeSection from "./sections/ContactMeSection";
 import Footer from "@starkit/atomic-components/misc/Footer";
 import Header from "@starkit/atomic-components/misc/Header";
 import { SECTIONS } from "./utils/constants/sections";
+import { ThemeProvider } from "./utils/context/ThemeContext";
 
 function App() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -48,7 +49,7 @@ function App() {
   };
 
   return (
-    <>
+    <ThemeProvider>
       <div ref={scrollRef} className="h-screen w-screen overflow-y-auto">
         <Header
           className="fixed top-0 z-40 w-full"
@@ -73,7 +74,7 @@ function App() {
         />
         <Footer className="fixed bottom-0 w-full" />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
