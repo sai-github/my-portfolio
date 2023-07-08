@@ -2,39 +2,43 @@ import { IExperience } from "./models";
 
 export const experienceList: IExperience[] = [
   {
-    logoLight: "https://dummyimage.com/64x64/8f8f8f/0d0d0d&text=logo",
-    logoDark: "https://dummyimage.com/64x64/1a1a1a/f2f2f2&text=logo",
+    logoLight: "/assets/airbus logo light.svg",
+    logoDark: "/assets/airbus logo dark.svg",
     title: "Engineer",
-    timeline: "Sept '18 - Oct '23",
+    timeline: "Oct'20 - April'23",
     company: "Airbus",
     data: {
-      type: "quote",
-      quote:
-        "1.Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
+      type: "list",
+      list: [
+        "Developed feature-rich tool interfaces with advanced plotting capabilities",
+        "Served as the UI maintainer of tools in collaboration with the Airframe community teams",
+        "Promoted and integrated the Airbus Design System within our development process",
+      ],
     },
   },
   {
-    logoLight: "https://dummyimage.com/64x64/8f8f8f/0d0d0d&text=logo",
-    logoDark: "https://dummyimage.com/64x64/1a1a1a/f2f2f2&text=logo",
-    title: "Engineer",
-    timeline: "Sept '18 - Oct '23",
+    logoLight: "/assets/airbus logo light.svg",
+    logoDark: "/assets/airbus logo dark.svg",
+    title: "Associate Engineer",
+    timeline: "July'18 - Sept'23",
     company: "Airbus",
     data: {
-      type: "quote",
-      quote:
-        "2.Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
+      type: "list",
+      list: [
+        "Assisted in enhancing a web app for flight test planning and certification documentation",
+        "Instrumental in the successful migration of an existing tool to Angular 2.0 platform",
+      ],
     },
   },
   {
-    logoLight: "https://dummyimage.com/64x64/8f8f8f/0d0d0d&text=logo",
-    logoDark: "https://dummyimage.com/64x64/1a1a1a/f2f2f2&text=logo",
-    title: "Engineer",
-    timeline: "Sept '18 - Oct '23",
-    company: "Airbus",
+    logoLight: "/assets/iitm logo.svg",
+    title: "Engineering Design",
+    timeline: "2013 - 2018",
+    company: "IIT-M",
     data: {
       type: "quote",
       quote:
-        "3.Refactored React codebase and implemented core features for a tool which provides statistical and analytical capabilities for Material quality and Test reduction",
+        "At university, I discovered a passion for programming, particularly Python, which I explored through both academics and internships. This journey sparked my fascination with the dynamic union of creativity and code.",
     },
   },
 ];
