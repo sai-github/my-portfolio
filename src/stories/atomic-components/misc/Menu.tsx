@@ -35,7 +35,7 @@ interface MenuProps extends React.HTMLAttributes<HTMLDivElement> {
   onNavigate?: (value: string, event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const Menu = ({ children = [], onNavigate, className, ...rest }: MenuProps) => {
+const Menu = ({ children = [], onNavigate, className }: MenuProps) => {
   const childrenWithProps = React.Children.map(
     children,
     (child: React.ReactElement<MenuListProps>) => {
