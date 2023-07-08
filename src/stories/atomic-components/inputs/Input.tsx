@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./input.css";
 import clsx from "clsx";
 
@@ -35,6 +35,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     id ||
     (label ? `input-${Math.random().toString(36).substring(2, 9)}` : undefined);
 
+  // Touch state management inside the Input component
+  const [isTouched, setIsTouched] = useState<boolean>(false);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) onChange(event);
+    setIsTouched(true);
+  };
+
   const hintCls = clsx({
     "text-actions-info": hintType === "info",
     "text-actions-success": hintType === "success",
@@ -65,10 +73,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         disabled={disabled}
         required={required}
         autoFocus={autoFocus}
-        onChange={onChange}
+        onChange={handleChange}
         {...rest}
       />
-      {hintType && hint && <div className={hintCls}>{hint}</div>}
+      {isTouched && hintType && hint && <div className={hintCls}>{hint}</div>}
     </div>
   );
 });

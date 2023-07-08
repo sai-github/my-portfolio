@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./textarea.css";
 import clsx from "clsx";
 
@@ -53,6 +53,14 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
       "text-actions-danger": hintType === "danger",
     });
 
+    // Touch state management inside the Textarea component
+    const [isTouched, setIsTouched] = useState<boolean>(false);
+
+    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      if (onChange) onChange(event);
+      setIsTouched(true);
+    };
+
     return (
       <div className={clsx(className, "textarea-container")}>
         {label && (
@@ -76,10 +84,10 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           placeholder={placeholder}
           disabled={disabled}
           required={required}
-          onChange={onChange}
+          onChange={handleChange}
           {...rest}
         />
-        {hintType && hint && <div className={hintCls}>{hint}</div>}
+        {isTouched && hintType && hint && <div className={hintCls}>{hint}</div>}
       </div>
     );
   }
