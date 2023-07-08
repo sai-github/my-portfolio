@@ -16,6 +16,7 @@ const Button = ({
   Icon: Icon,
   children,
   onClick,
+  ...rest
 }: ButtonProps) => {
   const btnCls = clsx(className, "button", {
     "btn-primary": variant === "primary",
@@ -26,7 +27,7 @@ const Button = ({
   });
 
   return (
-    <button className={btnCls} onClick={onClick}>
+    <button className={btnCls} onClick={onClick} {...rest}>
       {Icon && <Icon size="2rem" color="var(--current-text)" variant="Bulk" />}
       {children}
     </button>
