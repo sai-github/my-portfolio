@@ -156,9 +156,9 @@ section.my-section:nth-child(odd) {
 
 /** Default section style */
 section.my-section {
-  @apply flex h-screen w-screen flex-col items-center gap-8 px-8 lg:px-0;
+  @apply flex h-screen w-screen flex-col items-center gap-4 px-8 sm:gap-8 lg:px-0;
 }
 
 section.my-rounded-section canvas {
-  @apply rounded-3xl sm:rounded-none;
+  @apply rounded-3xl lg:rounded-none;
 }

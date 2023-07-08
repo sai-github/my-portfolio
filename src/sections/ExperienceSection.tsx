@@ -37,9 +37,9 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
     return (
       <section
         ref={ref}
-        className="my-section my-rounded-section items-start sm:justify-between"
+        className="my-section my-rounded-section items-start justify-between"
       >
-        <div className="z-10 mt-32 flex flex-col items-center justify-center gap-6 md:flex-row">
+        <div className="mt-16 flex h-[inherit] flex-col items-center justify-center gap-6 md:flex-row">
           {isDesktop && (
             <Button
               variant="outline"
@@ -57,7 +57,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
             >
               <ExperienceCard
                 {...data[current]}
-                variant={isDesktop ? "small" : "large"}
+                variant={isDesktop ? "large" : "small"}
               />
             </motion.div>
           </AnimatePresence>
@@ -86,7 +86,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
         </div>
 
         {renderedOnce && (
-          <div className="aspect-video w-full sm:aspect-auto ">
+          <div className="mb-8 aspect-video w-full flex-shrink-0 lg:mb-0 lg:max-h-[50%]">
             <Spline scene="https://prod.spline.design/IIZ3CCuef7hWRwsS/scene.splinecode" />
           </div>
         )}
