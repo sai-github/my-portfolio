@@ -35,7 +35,7 @@ Welcome to the source code of my portfolio! You can check the live version at [r
 
 - Good looking simple favs from [Favicon generator](https://favicon.io/favicon-generator/)
 
-- This project was developed with assistance from [ChatGPT](https://openai.com/research/chatgpt), a language model by [OpenAI](https://openai.com).
+- This project was developed with assistance from [ChatGPT](https://openai.com/chatgpt), a language model by [OpenAI](https://openai.com).
 
 ## Development Setup 💻
 
