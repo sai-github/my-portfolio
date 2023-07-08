@@ -58,3 +58,18 @@ To validate some design ideas, I decided to create a basic design in [Figma](htt
 Once I started coding, I also had the idea to document my components. It was the perfect opportunity to explore Storybook. Although there were moments of frustration and the temptation to abandon the project and focus on interview preparation, I pushed through. ChatGPT provided valuable support, clarifying my doubts since I had no one to discuss my UI ideas with. (Included in this README) 🤖
 
 Finally, I am grateful for the support from my brother and friend, who encouraged me to continue and not view it as time wasted. I thoroughly enjoyed the process and am proud of the skills I acquired along the way. [This old portfolio website](saibhargavaramu.github.io) holds significance for me as it is the first site I created when I was starting to learn HTML and CSS after getting into the job 😎 (Actually, there is one more site, but I used Dreamweaver, so it doesn't count. Also, it's goofy!) 😜
+
+## License
+
+This project is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to:
+
+- **Share**: Copy and redistribute the material in any medium or format.
+- **Adapt**: Remix, transform, and build upon the material for any purpose, even commercially.
+
+Under the following terms:
+
+- **Attribution**: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+
+For more details, see the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
