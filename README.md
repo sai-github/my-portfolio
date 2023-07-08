@@ -19,7 +19,7 @@ Welcome to the source code of my portfolio! You can check the live version at [r
 
 ## Features & Concepts 🚀
 
-- **Design System**: Created a mini design system using Figma with neo-brutalist style.
+- **Design System**: Created a mini design system [@starkit](https://storybook.ramu.me/) using [Figma](https://www.figma.com/community/file/1259615148230055566) with neo-brutalist style.
 
 - **Themes**: Implemented both light and dark themes. The site respects the initial theme preference of the user's system.
 
