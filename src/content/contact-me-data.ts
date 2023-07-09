@@ -5,7 +5,7 @@ export const contactInfo: IContactInfo = {
   status:
     "seeking opportunities that harmonize the realms of UI development and design",
   social: {
-    githubURL: "https://github.com/sai-github",
+    githubURL: "https://github.com/sai-github/my-portfolio",
     linkedinURL: "https://www.linkedin.com/in/sai-bhargava-ramu",
   },
 };
