@@ -64,7 +64,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
         ref={ref}
         className="my-section my-rounded-section items-start justify-between"
       >
-        <div className="mt-16 flex h-[inherit] flex-col items-center justify-center gap-6 md:flex-row">
+        <div className="flex min-h-[400px] flex-col items-center justify-center gap-6 md:flex-row">
           {isDesktop && (
             <Button
               variant="outline"
@@ -111,13 +111,14 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
         </div>
 
         {renderedOnce && (
-          <div className="relative mb-8 aspect-video w-full flex-shrink-0 lg:mb-0 lg:max-h-[50%]">
+          <div className="relative mb-8 aspect-video w-full flex-shrink-0 xl:mb-0 xl:h-1/2">
             <Spline
               scene="https://prod.spline.design/IIZ3CCuef7hWRwsS/scene.splinecode"
               onLoad={onLoad}
             />
             <Button
               className="absolute bottom-0 right-0 mb-2 mr-2 sm:mb-8 sm:mr-8"
+              variant="secondary"
               Icon={RefreshLeftSquare}
               onClick={() => replayScene()}
             />

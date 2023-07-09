@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { HTMLAttributes, useEffect, useState } from "react";
 import clsx from "clsx";
 
 import Card from "../../atomic-components/cards/Card";
@@ -22,7 +22,7 @@ type SenderInfo = {
   msg: string;
 };
 
-interface ContactMeProps {
+interface ContactMeProps extends HTMLAttributes<HTMLElement> {
   avatar: string;
   status: string;
   social: {
@@ -32,9 +32,16 @@ interface ContactMeProps {
   onSend: (name: string, msg: string) => void;
 }
 
-const ContactMe = ({ avatar, status, social, onSend }: ContactMeProps) => {
+const ContactMe = ({
+  className,
+  avatar,
+  status,
+  social,
+  onSend,
+}: ContactMeProps) => {
   const isDesktop = useIsDesktop();
   const cardCls = clsx(
+    className,
     "flex",
     !isDesktop && "flex-col",
     "p-4 md:p-8",

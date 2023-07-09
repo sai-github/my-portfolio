@@ -30,8 +30,26 @@ const ContactMeSection = forwardRef<HTMLElement, ContactMeSectionProps>(
     };
 
     return (
-      <section ref={ref} className="my-section justify-center">
-        <ContactMe {...data} onSend={handleSend} />
+      <section ref={ref} className="my-section relative  justify-center ">
+        <svg className="absolute top-0 h-[7.5rem] w-full">
+          <defs>
+            <pattern
+              id="pattern-30"
+              patternUnits="userSpaceOnUse"
+              width="16"
+              height="16"
+            >
+              <path
+                d="M7,7 l2,0 l0,2 l-2,0 l0,-2 M0,0 l1,0 l0,1 l-1,0 l0,-1 M15,0 l1,0 l0,1 l-1,0 l0,-1 M0,15 l1,0 l0,1 l-1,0 l0,-1 M15,15 l1,0 l0,1 l-1,0 l0,-1"
+                fill="hotpink"
+                style={{ fill: "var(--current-accent)" }}
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#pattern-30)" />
+        </svg>
+
+        <ContactMe {...data} onSend={handleSend} className="my-16 xl:my-32" />
         {submitStatus && (
           <FeedbackModal
             type={submitStatus}

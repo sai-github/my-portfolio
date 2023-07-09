@@ -156,9 +156,14 @@ section.my-section:nth-child(odd) {
 
 /** Default section style */
 section.my-section {
-  @apply flex h-screen w-screen flex-col items-center gap-4 px-8 sm:gap-8 lg:px-0;
+  /* padding top is to off set header (can be overridden inside section) */
+  @apply flex  flex-col items-center gap-4 px-8 pt-[7.5rem] sm:gap-8 xl:px-0;
+}
+
+.my-section.hero-section {
+  @apply pt-0;
 }
 
 section.my-rounded-section canvas {
-  @apply rounded-3xl lg:rounded-none;
+  @apply rounded-3xl xl:rounded-none;
 }

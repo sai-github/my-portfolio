@@ -14,13 +14,13 @@ import {
 const MobileView = () => {
   return (
     <div
-      className="pointer-events-none z-10 mb-24 flex  flex-col justify-end gap-4 text-center"
+      className="pointer-events-none z-10 mb-12 flex  flex-col justify-end gap-4 text-center"
       data-scroll
     >
-      <h4>
+      <h5>
         <span className="">Developer & </span>
         <span className="text-gradient">Designer</span>
-      </h4>
+      </h5>
       <h6>
         Hi there 👋 <br />
         Bhargava Ramu here, crafting the intersection of Design and Code
@@ -89,7 +89,7 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
     return (
       <section
         ref={ref}
-        className="my-section relative justify-end sm:justify-center"
+        className="my-section hero-section relative h-screen w-full justify-end sm:justify-center"
       >
         {isDesktop ? <DesktopView /> : <MobileView />}
 
