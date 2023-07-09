@@ -6,6 +6,9 @@ export default {
   darkMode: ["class", '[data-theme="dark"]'],
   theme: {
     extend: {
+      screens: {
+        xl: "1400px",
+      },
       colors: {
         light: {
           background: "var(--light-background)",
