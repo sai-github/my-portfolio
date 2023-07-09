@@ -38,6 +38,7 @@ const ContactMe = ({
   status,
   social,
   onSend,
+  ...rest
 }: ContactMeProps) => {
   const isDesktop = useIsDesktop();
   const cardCls = clsx(
@@ -88,7 +89,7 @@ const ContactMe = ({
   const isDisabled = Object.values(errors).some((error) => error);
 
   return (
-    <Card className={cardCls}>
+    <Card className={cardCls} {...rest}>
       <div className="flex flex-[1.5] flex-col items-center gap-4">
         <Input
           className="w-full"
