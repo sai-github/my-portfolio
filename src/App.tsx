@@ -72,7 +72,7 @@ function App() {
           ref={contactRef}
           onInView={() => handleActiveSection(SECTIONS.CONTACT_ME)}
         />
-        <Footer className="fixed bottom-0 w-full" />
+        <Footer className="bottom-0 w-full" />
       </div>
     </ThemeProvider>
   );
