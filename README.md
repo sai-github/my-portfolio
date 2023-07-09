@@ -35,6 +35,8 @@ Welcome to the source code of my portfolio! You can check the live version at [r
 
 - Good looking simple favs from [Favicon generator](https://favicon.io/favicon-generator/)
 
+- Simple clean patterns from [HelloYes](https://patterns.helloyes.dev/)
+
 - This project was developed with assistance from [ChatGPT](https://openai.com/chatgpt), a language model by [OpenAI](https://openai.com).
 
 ## Development Setup 💻
