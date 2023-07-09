@@ -15,6 +15,7 @@ export const experienceList: IExperience[] = [
         "Promoted and integrated the Airbus Design System within our development process",
       ],
     },
+    skills: ["React", "Sketch", "Figma", "Openshift"],
   },
   {
     logoLight: "/assets/airbus logo light.svg",
@@ -29,6 +30,7 @@ export const experienceList: IExperience[] = [
         "Instrumental in the successful migration of an existing tool to Angular 2.0 framework",
       ],
     },
+    skills: ["Angular", "AdobeXD", "Java"],
   },
   {
     logoLight: "/assets/iitm logo.svg",

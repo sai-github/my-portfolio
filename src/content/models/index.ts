@@ -15,6 +15,7 @@ export interface IExperience {
   timeline: string;
   company: string;
   data: IExperienceData;
+  skills?: string[];
 }
 
 export interface IContactInfo {
