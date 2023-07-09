@@ -19,7 +19,7 @@ const useSectionInView = (
         }
       },
       {
-        threshold: 0.75, // active section is decided based on majority of view occupied
+        threshold: 0.55, // active section is decided based on majority of view occupied
       }
     );
     if (currentRef) {
