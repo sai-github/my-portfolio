@@ -24,6 +24,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const SimpleExperienceCard: Story = {};
+export const ExperienceCardWithSkills: Story = {
+  args: {
+    skills: ["React", "Figma"],
+  },
+};
 
 export const SmallExperienceCard: Story = {
   args: {

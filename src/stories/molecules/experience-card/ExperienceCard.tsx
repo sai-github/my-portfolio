@@ -4,6 +4,7 @@ import Card from "../../atomic-components/cards/Card";
 import Quote from "../../atomic-components/misc/Quote";
 import StyledList from "../../atomic-components/misc/StyledList";
 import { ThemeContext } from "../../../utils/context/ThemeContext";
+import Chip from "@starkit/atomic-components/chips/Chip";
 
 interface ExperienceCardProps {
   logoLight: string;
@@ -21,6 +22,7 @@ interface ExperienceCardProps {
         type: "list";
         list: string[];
       };
+  skills?: string[];
 }
 
 const ExperienceCard = ({
@@ -31,6 +33,7 @@ const ExperienceCard = ({
   company,
   variant = "large",
   data,
+  skills,
 }: ExperienceCardProps) => {
   const { theme, toggleTheme, updateTheme } = useSystemTheme();
   const cardCls = clsx(
@@ -58,6 +61,13 @@ const ExperienceCard = ({
           <Quote text={data.quote} />
         ) : (
           <StyledList list={data.list} />
+        )}
+        {skills && (
+          <div className="flex flex-wrap gap-2">
+            {skills.map((skill) => (
+              <Chip key={skill} name={skill} />
+            ))}
+          </div>
         )}
       </Card>
     </ThemeContext.Provider>
