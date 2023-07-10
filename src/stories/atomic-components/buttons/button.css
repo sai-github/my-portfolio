@@ -11,7 +11,7 @@
   }
 
   .button.btn-primary {
-    @apply bg-[var(--current-primary)];
+    @apply bg-[var(--current-primary)] text-[var(--light-text)];
   }
 
   .button.btn-secondary {
