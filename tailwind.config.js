@@ -34,7 +34,7 @@ export default {
           white: "#ffffff",
           black: "#000000",
           lightGrey: "#ebebeb",
-          disabledBlack: "#8b8681",
+          disabledBlack: "#4c4c4c",
           disabledWhite: "#fffff7",
         },
       },
