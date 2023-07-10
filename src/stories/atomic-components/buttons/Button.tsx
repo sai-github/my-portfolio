@@ -28,7 +28,15 @@ const Button = ({
 
   return (
     <button className={btnCls} onClick={onClick} {...rest}>
-      {Icon && <Icon size="2rem" color="var(--current-text)" variant="Bulk" />}
+      {Icon && (
+        <Icon
+          size="2rem"
+          color={
+            variant === "primary" ? "var(--light-text)" : "var(--current-text)"
+          }
+          variant="Bulk"
+        />
+      )}
       {children}
     </button>
   );
