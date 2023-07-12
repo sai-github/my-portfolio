@@ -8,6 +8,13 @@ Welcome to the source code of my portfolio! You can check the live version at [r
 
 <img src="public/cover.png" alt="Portfolio Cover" width="50%">
 
+<br />
+
+[![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://ramu.me)
+[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](https://storybook.ramu.me)
+[![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1259615148230055566)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
+
 </div>
 
 ---
