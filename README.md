@@ -29,6 +29,8 @@ Welcome to the source code of my portfolio! You can check the live version at [r
 
 ## References & Credits 🙏
 
+- Site idea from [Bokoko](https://bokoko33.me/)
+
 - The loading spinner was inspired by this [CodePen by Fazley Rabby](https://codepen.io/fazley_rabby/pen/qBOwJbQ).
 
 - The custom scrollbar was implemented based on this [tutorial by Zkreations](https://www.zkreations.com/2018/02/personalizar-scrollbar-facil-custom-scrollbars.html).
