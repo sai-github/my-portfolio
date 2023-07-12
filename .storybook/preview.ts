@@ -17,7 +17,7 @@ const preview: Preview = {
   parameters: {
     options: {
       storySort: {
-        order: ["Intro", "Atoms", "Molecules", "Example"],
+        order: ["@starkit", "Intro", "Atoms", "Molecules", "Example"],
       },
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
