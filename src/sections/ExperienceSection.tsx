@@ -26,7 +26,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
   ({ onInView }, ref) => {
     const isDesktop = useIsDesktop();
     const { renderedOnce } = useCustomSplineLoad(ref, {
-      threshold: 0,
+      threshold: 1,
     });
     const [current, setCurrent] = useState(0);
     useSectionInView(ref, onInView);
@@ -64,7 +64,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
         ref={ref}
         className="my-section my-rounded-section items-start justify-between"
       >
-        <div className="flex min-h-[400px] flex-col items-center justify-center gap-6 md:flex-row">
+        <div className="flex min-h-[28rem] flex-col items-center justify-center gap-6 md:flex-row">
           {isDesktop && (
             <Button
               variant="outline"
