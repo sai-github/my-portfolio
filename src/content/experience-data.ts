@@ -11,7 +11,7 @@ export const experienceList: IExperience[] = [
       type: "list",
       list: [
         "Developed feature-rich tool interfaces with advanced plotting capabilities",
-        "Served as the UI maintainer of tools in collaboration with the Airframe community teams",
+        "Served as the UI maintainer of tools in collaboration with Engineering teams",
         "Promoted and integrated the Airbus Design System within our development process",
       ],
     },
