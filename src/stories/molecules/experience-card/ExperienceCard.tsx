@@ -44,15 +44,15 @@ const ExperienceCard = ({
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, updateTheme }}>
       <Card className={cardCls}>
-        <div className="grid grid-cols-[4rem,1fr] gap-4">
+        <div className="grid grid-cols-[4rem,1fr] gap-2">
           <img
             className="h-16 w-16"
             src={theme === "light" ? logoLight : logoDark || logoLight}
           />
           <div className="flex items-center justify-between">
             <div>
-              <div className="mb-1">{title}</div>
-              <div className="small">{timeline}</div>
+              <div className="mb-1 font-bold">{title}</div>
+              <div className="small italic">{timeline}</div>
             </div>
             <div className="subtitle uppercase">{company}</div>
           </div>
