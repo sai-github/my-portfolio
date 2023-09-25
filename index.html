@@ -1,71 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <!-- Basic meta tags -->
-    <meta
-      name="description"
-      content="Creating aesthetically pleasing digital experiences as a front-end developer."
-    />
-    <meta
-      name="keywords"
-      content="ramu, portfolio, bhargava ramu, dev, frontend developer, designer"
-    />
+<head>
+  <meta charset="UTF-8" />
 
-    <!-- og tags -->
-    <meta property="og:title" content="Bhargava Ramu" />
-    <meta
-      property="og:description"
-      content="Creating aesthetically pleasing digital experiences as a front-end developer."
-    />
-    <meta property="og:image" content="https://ramu.me/cover.png" />
-    <meta property="og:url" content="https://ramu.me" />
-    <meta property="og:type" content="website" />
+  <!-- Basic meta tags -->
+  <meta name="description" content="Creating aesthetically pleasing digital experiences as a front-end developer." />
+  <meta name="keywords" content="ramu, portfolio, bhargava ramu, dev, frontend developer, designer" />
 
-    <!-- twitter card-->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Bhargava Ramu" />
-    <meta
-      name="twitter:description"
-      content="Creating aesthetically pleasing digital experiences as a front-end developer."
-    />
-    <meta name="twitter:image" content="https://ramu.me/cover.png" />
+  <!-- og tags -->
+  <meta property="og:title" content="Bhargava Ramu" />
+  <meta property="og:description"
+    content="Creating aesthetically pleasing digital experiences as a front-end developer." />
+  <meta property="og:image" content="https://ramu.me/cover.png" />
+  <meta property="og:url" content="https://ramu.me" />
+  <meta property="og:type" content="website" />
 
-    <!-- cannonical -->
-    <link rel="canonical" href="https://ramu.me" />
+  <!-- twitter card-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bhargava Ramu" />
+  <meta name="twitter:description"
+    content="Creating aesthetically pleasing digital experiences as a front-end developer." />
+  <meta name="twitter:image" content="https://ramu.me/cover.png" />
 
-    <!-- favicons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon_io/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon_io/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon_io/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/favicon_io/site.webmanifest" />
+  <!-- cannonical -->
+  <link rel="canonical" href="https://ramu.me" />
 
-    <!-- fonts and viewport -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Raleway:wght@400;500;700;900&family=Telex&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="/favicon_io/site.webmanifest" />
 
-    <meta name="robots" content="index, follow" />
-    <script type="application/ld+json">
+  <!-- fonts and viewport -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Raleway:wght@400;500;700;900&family=Telex&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
@@ -79,291 +55,315 @@
       }
     </script>
 
-    <!-- tracking -->
-    <script type="text/javascript">
-      (function (c, l, a, r, i, t, y) {
-        c[a] =
-          c[a] ||
-          function () {
-            (c[a].q = c[a].q || []).push(arguments);
-          };
-        t = l.createElement(r);
-        t.async = 1;
-        t.src = "https://www.clarity.ms/tag/" + i;
-        y = l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t, y);
-      })(window, document, "clarity", "script", "hx5n7ms878");
-    </script>
+  <!-- tracking -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "hx5n7ms878");
+  </script>
 
-    <title>Bhargava Ramu</title>
+  <title>Bhargava Ramu</title>
 
-    <style>
+  <style>
+    :root {
+      --temp-background: #fdf7f1;
+    }
+
+    @media (prefers-color-scheme: dark) {
       :root {
-        --temp-background: #fdf7f1;
+        --temp-background: #090a00;
       }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --temp-background: #090a00;
-        }
-      }
-      body {
-        margin: 0;
-      }
-      /**Loading Animation*/
-      /* CSS Variables for easy customization and maintainability */
-      :root {
-        --engine-size: 9rem; /* Nearest multiple of 16 for 150px */
-        --engine-border-width: 1rem; /* Nearest multiple of 8 for 16px */
-        --engine-border-color: #dedfe3;
-        --engine-background-color: #0af;
-        --blade-width: 12%;
-        --blade-height: 48%;
-        --blade-background-color: #222;
-        --blade-after-height: 70%;
-        --blade-after-background-color: #808080;
-        --pivot-size: 1rem; /* Nearest multiple of 8 for 10px */
-        --pivot-background-color: #ccc;
-        --pivot-after-background-color: #888;
-        --engine-shadow-size: calc(var(--engine-size) * 0.8);
-      }
+    }
 
-      #spinner-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: var(--temp-background);
-        position: relative; /* Required for absolute positioning of children */
-      }
+    body {
+      margin: 0;
+    }
 
-      .engine-loader {
-        position: absolute; /* Position the engine absolutely */
-        top: 50%; /* Center vertically */
-        left: 50%; /* Center horizontally */
-        transform: translate(-50%, -50%); /* Offset for perfect center */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+    /**Loading Animation*/
+    /* CSS Variables for easy customization and maintainability */
+    :root {
+      --engine-size: 9rem;
+      /* Nearest multiple of 16 for 150px */
+      --engine-border-width: 1rem;
+      /* Nearest multiple of 8 for 16px */
+      --engine-border-color: #dedfe3;
+      --engine-background-color: #0af;
+      --blade-width: 12%;
+      --blade-height: 48%;
+      --blade-background-color: #222;
+      --blade-after-height: 70%;
+      --blade-after-background-color: #808080;
+      --pivot-size: 1rem;
+      /* Nearest multiple of 8 for 10px */
+      --pivot-background-color: #ccc;
+      --pivot-after-background-color: #888;
+      --engine-shadow-size: calc(var(--engine-size) * 0.8);
+    }
 
-      .below-engine-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: calc(
-          var(--engine-size) + 2 * var(--engine-border-width) + 10rem
-        ); /* Margin equal to engine's height + border widths + extra space */
-      }
+    #spinner-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--temp-background);
+      position: relative;
+      /* Required for absolute positioning of children */
+    }
 
-      .engine-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: calc(var(--engine-size) + 2 * var(--engine-border-width));
-        height: calc(var(--engine-size) + 2 * var(--engine-border-width));
-        animation: pulse 2s infinite ease-in-out;
-      }
+    .engine-loader {
+      position: absolute;
+      /* Position the engine absolutely */
+      top: 50%;
+      /* Center vertically */
+      left: 50%;
+      /* Center horizontally */
+      transform: translate(-50%, -50%);
+      /* Offset for perfect center */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-      .engine {
-        position: relative;
-        width: var(--engine-size);
-        height: var(--engine-size);
-        border: var(--engine-border-width) solid var(--engine-border-color);
-        border-radius: 50%;
-        box-sizing: content-box;
-        animation: spin-start 8s cubic-bezier(0.6, 0, 0.25, 0.25) forwards,
-          spin-end 12s linear 8s infinite;
-        box-shadow: inset 0 0 10px var(--engine-background-color);
-        background: radial-gradient(
-          circle at center,
+    .below-engine-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: calc(var(--engine-size) + 2 * var(--engine-border-width) + 10rem);
+      /* Margin equal to engine's height + border widths + extra space */
+    }
+
+    .engine-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: calc(var(--engine-size) + 2 * var(--engine-border-width));
+      height: calc(var(--engine-size) + 2 * var(--engine-border-width));
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .engine {
+      position: relative;
+      width: var(--engine-size);
+      height: var(--engine-size);
+      border: var(--engine-border-width) solid var(--engine-border-color);
+      border-radius: 50%;
+      box-sizing: content-box;
+      animation: spin-start 8s cubic-bezier(0.6, 0, 0.25, 0.25) forwards,
+        spin-end 12s linear 8s infinite;
+      box-shadow: inset 0 0 10px var(--engine-background-color);
+      background: radial-gradient(circle at center,
           var(--engine-background-color),
-          transparent
-        );
-        z-index: 1;
-      }
+          transparent);
+      z-index: 1;
+    }
 
-      .engine-shadow {
-        position: relative;
-        width: var(--engine-shadow-size);
-        height: var(--engine-shadow-size);
-        border-radius: 50%;
-        background: radial-gradient(
-          circle at center,
+    .engine-shadow {
+      position: relative;
+      width: var(--engine-shadow-size);
+      height: var(--engine-shadow-size);
+      border-radius: 50%;
+      background: radial-gradient(circle at center,
           rgba(0, 0, 0, 0.2) 0%,
           rgba(0, 0, 0, 0.1) 50%,
           rgba(0, 0, 0, 0.05) 75%,
-          transparent 100%
-        );
-        transform: scaleY(0.2);
-        animation: pulse-shadow 2s infinite ease-in-out;
-      }
+          transparent 100%);
+      transform: scaleY(0.2);
+      animation: pulse-shadow 2s infinite ease-in-out;
+    }
 
-      .blade {
-        position: absolute;
-        width: var(--blade-width);
-        height: var(--blade-height);
-        left: 44%;
-        bottom: 50%;
-        transform-origin: 50% 100%;
-        background: var(--blade-background-color);
-        border-radius: 50% 50% 100% 20%;
-        overflow: hidden;
-      }
+    .blade {
+      position: absolute;
+      width: var(--blade-width);
+      height: var(--blade-height);
+      left: 44%;
+      bottom: 50%;
+      transform-origin: 50% 100%;
+      background: var(--blade-background-color);
+      border-radius: 50% 50% 100% 20%;
+      overflow: hidden;
+    }
 
-      .blade:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -3px; /* fine tuned for shape and will need iteration if width is changed */
-        width: 14px; /* (related to left) fine tuned for shape and will need iteration if width is changed */
-        height: var(--blade-after-height);
-        background: var(--blade-after-background-color);
-        border-radius: 50% 50% 100% 20%;
-      }
+    .blade:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -3px;
+      /* fine tuned for shape and will need iteration if width is changed */
+      width: 14px;
+      /* (related to left) fine tuned for shape and will need iteration if width is changed */
+      height: var(--blade-after-height);
+      background: var(--blade-after-background-color);
+      border-radius: 50% 50% 100% 20%;
+    }
 
-      /* Rotation for each blade */
-      .blade:nth-child(1) {
+    /* Rotation for each blade */
+    .blade:nth-child(1) {
+      transform: rotate(0deg);
+    }
+
+    .blade:nth-child(2) {
+      transform: rotate(36deg);
+    }
+
+    .blade:nth-child(3) {
+      transform: rotate(72deg);
+    }
+
+    .blade:nth-child(4) {
+      transform: rotate(108deg);
+    }
+
+    .blade:nth-child(5) {
+      transform: rotate(144deg);
+    }
+
+    .blade:nth-child(6) {
+      transform: rotate(180deg);
+    }
+
+    .blade:nth-child(7) {
+      transform: rotate(216deg);
+    }
+
+    .blade:nth-child(8) {
+      transform: rotate(252deg);
+    }
+
+    .blade:nth-child(9) {
+      transform: rotate(288deg);
+    }
+
+    .blade:nth-child(10) {
+      transform: rotate(324deg);
+    }
+
+    .pivot {
+      position: absolute;
+      width: var(--pivot-size);
+      height: var(--pivot-size);
+      background: #333;
+      border-radius: 50%;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    .pivot {
+      position: absolute;
+      overflow: hidden;
+      width: var(--pivot-size);
+      height: var(--pivot-size);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      background: #ccc;
+      z-index: 2;
+    }
+
+    .pivot:after {
+      content: "";
+      width: var(--pivot-size);
+      height: calc(var(--pivot-size) / 2);
+      background: #888;
+      display: block;
+    }
+
+    @keyframes spin-start {
+      0% {
         transform: rotate(0deg);
       }
-      .blade:nth-child(2) {
-        transform: rotate(36deg);
+
+      100% {
+        transform: rotate(1500deg);
       }
-      .blade:nth-child(3) {
-        transform: rotate(72deg);
-      }
-      .blade:nth-child(4) {
-        transform: rotate(108deg);
-      }
-      .blade:nth-child(5) {
-        transform: rotate(144deg);
-      }
-      .blade:nth-child(6) {
-        transform: rotate(180deg);
-      }
-      .blade:nth-child(7) {
-        transform: rotate(216deg);
-      }
-      .blade:nth-child(8) {
-        transform: rotate(252deg);
-      }
-      .blade:nth-child(9) {
-        transform: rotate(288deg);
-      }
-      .blade:nth-child(10) {
-        transform: rotate(324deg);
+    }
+
+    @keyframes spin-end {
+      0% {
+        transform: rotate(1500deg);
       }
 
-      .pivot {
-        position: absolute;
-        width: var(--pivot-size);
-        height: var(--pivot-size);
-        background: #333;
-        border-radius: 50%;
-        left: 50%;
-        bottom: 50%;
-        transform: translate(-50%, 50%);
+      100% {
+        transform: rotate(4500deg);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
       }
 
-      .pivot {
-        position: absolute;
-        overflow: hidden;
-        width: var(--pivot-size);
-        height: var(--pivot-size);
-        border-radius: 50%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        background: #ccc;
-        z-index: 2;
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes pulse-shadow {
+
+      0%,
+      100% {
+        width: var(--engine-shadow-size);
       }
 
-      .pivot:after {
-        content: "";
-        width: var(--pivot-size);
-        height: calc(var(--pivot-size) / 2);
-        background: #888;
-        display: block;
+      50% {
+        width: calc(var(--engine-shadow-size) + 2rem);
+        /* Nearest multiple of 16 for 20px */
       }
+    }
+  </style>
+</head>
 
-      @keyframes spin-start {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(1500deg);
-        }
-      }
-
-      @keyframes spin-end {
-        0% {
-          transform: rotate(1500deg);
-        }
-        100% {
-          transform: rotate(4500deg);
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-      }
-
-      @keyframes pulse-shadow {
-        0%,
-        100% {
-          width: var(--engine-shadow-size);
-        }
-        50% {
-          width: calc(
-            var(--engine-shadow-size) + 2rem
-          ); /* Nearest multiple of 16 for 20px */
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- spinner while the assets load (will be removed once react app loads)-->
-    <div id="spinner-container">
-      <div class="engine-loader">
-        <div class="engine-wrapper">
-          <div class="engine">
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="blade"></div>
-            <div class="pivot"></div>
-          </div>
+<body>
+  <!-- spinner while the assets load (will be removed once react app loads)-->
+  <div id="spinner-container">
+    <div class="engine-loader">
+      <div class="engine-wrapper">
+        <div class="engine">
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="blade"></div>
+          <div class="pivot"></div>
         </div>
-        <div class="engine-shadow"></div>
       </div>
-
-      <!-- Content Below Engine -->
-      <div class="below-engine-content">
-        <!-- Welcome msg when react app is available -->
-        <div id="welcome-msg" style="display: none">
-          Welcome Aboard, Passengers !
-        </div>
-        <!-- Button to proceed, initially hidden -->
-        <button id="proceed-button" style="display: none" class="btn-primary">
-          Proceed
-        </button>
-      </div>
+      <div class="engine-shadow"></div>
     </div>
 
-    <!-- React root, initially hidden -->
-    <div id="root" style="display: none"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Content Below Engine -->
+    <div class="below-engine-content">
+      <!-- Welcome msg when react app is available -->
+      <div id="welcome-msg" style="display: none">
+        Welcome Aboard, Passengers !
+      </div>
+      <!-- Button to proceed, initially hidden -->
+      <button id="proceed-button" style="display: none" class="btn-primary">
+        Proceed
+      </button>
+    </div>
+  </div>
+
+  <!-- React root, initially hidden -->
+  <div id="root" style="display: none"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
