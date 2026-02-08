@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
 import ContactMe from "./ContactMe";
 const meta = {
@@ -14,6 +15,7 @@ const meta = {
       githubURL: "https://github.com/sai-github",
       linkedinURL: "https://www.linkedin.com/in/sai-bhargava-ramu",
     },
+    onSend: action("onSend"),
   },
 } satisfies Meta<typeof ContactMe>;
 

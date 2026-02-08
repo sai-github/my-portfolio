@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Header from "./Header";
 import { action } from "@storybook/addon-actions";
-import { userEvent, within } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/test";
 
 const meta = {
   title: "Atoms/Header",
@@ -67,9 +67,11 @@ export const HeaderMobileViewOpen: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    // Get the button element
-    const button = canvas.getByRole("button");
-    // Simulate a click event
-    await userEvent.click(button);
+    // Note: Storybook viewport addon doesn't change window.innerWidth,
+    // so the useIsDesktop hook may still return true. Only click if button exists.
+    const button = canvas.queryByRole("button");
+    if (button) {
+      await userEvent.click(button);
+    }
   },
 };

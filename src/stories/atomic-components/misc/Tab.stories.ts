@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 
 import Tab from "./Tab";
 const meta = {
@@ -10,6 +11,10 @@ const meta = {
       control: "text",
     },
     active: { control: "boolean" },
+    onClick: { action: "clicked" },
+  },
+  args: {
+    onClick: action("clicked"),
   },
 } satisfies Meta<typeof Tab>;
 
