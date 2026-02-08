@@ -13,8 +13,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.455",
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.12.51",
     "clsx": "^1.2.1",
     "framer-motion": "^10.12.18",
     "iconsax-react": "^0.0.8",
