@@ -5,7 +5,7 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling",
+    "@storybook/addon-themes",
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -13,6 +13,13 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+  },
+  viteFinal: (config) => {
+    config.define = {
+      ...config.define,
+      "globalThis.IS_REACT_ACT_ENVIRONMENT": true,
+    };
+    return config;
   },
 };
 export default config;

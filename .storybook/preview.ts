@@ -1,5 +1,8 @@
+// Configure React test environment before any React imports
+import "./test-setup";
+
 import type { Preview } from "@storybook/react";
-import { withThemeByDataAttribute } from "@storybook/addon-styling";
+import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import "../src/index.css";
 
 export const decorators = [
@@ -20,7 +23,6 @@ const preview: Preview = {
         order: ["@starkit", "Intro", "Atoms", "Molecules", "Example"],
       },
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
