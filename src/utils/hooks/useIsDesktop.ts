@@ -1,23 +1,15 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { breakpoints } from "../constants/breakpoints";
 
+const getSnapshot = () => window.innerWidth >= breakpoints.md;
+
+const subscribe = (callback: () => void) => {
+  window.addEventListener("resize", callback);
+  return () => window.removeEventListener("resize", callback);
+};
+
 const useIsDesktop = () => {
-  const [isDesktop, setIsDesktop] = useState<boolean>(
-    window.innerWidth >= breakpoints.md
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= breakpoints.md);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  return isDesktop;
+  return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
 };
 
 export default useIsDesktop;
