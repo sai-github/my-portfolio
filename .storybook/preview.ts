@@ -1,6 +1,3 @@
-// Configure React test environment before any React imports
-import "./test-setup";
-
 import type { Preview } from "@storybook/react-vite";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import "../src/index.css";
