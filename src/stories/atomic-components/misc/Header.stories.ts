@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import Header from "./Header";
-import { action } from "@storybook/addon-actions";
-import { userEvent, within } from "@storybook/test";
+import { action } from "storybook/actions";
+import { userEvent, within } from "storybook/test";
 
 const meta = {
   title: "Atoms/Header",
@@ -36,17 +36,22 @@ export const HeaderMobileViewClose: Story = {
     labels: ["Home", "Contact Me"],
     onNavigate: action("navigated"),
   },
+
   parameters: {
-    viewport: {
-      defaultViewport: "iphone6",
-    },
     docs: {
       description: {
         story:
           "This story demonstrates the mobile view with the menu closed. Please check individually where it is bound in viewport.",
       },
-    },
+    }
   },
+
+  globals: {
+    viewport: {
+      value: "iphone6",
+      isRotated: false
+    }
+  }
 };
 
 export const HeaderMobileViewOpen: Story = {
@@ -54,17 +59,16 @@ export const HeaderMobileViewOpen: Story = {
     labels: ["Home", "Contact Me"],
     onNavigate: action("navigated"),
   },
+
   parameters: {
-    viewport: {
-      defaultViewport: "iphone6",
-    },
     docs: {
       description: {
         story:
           "This story demonstrates the mobile view with the menu open. Please check individually where it is bound in viewport.",
       },
-    },
+    }
   },
+
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     // Note: Storybook viewport addon doesn't change window.innerWidth,
@@ -74,4 +78,11 @@ export const HeaderMobileViewOpen: Story = {
       await userEvent.click(button);
     }
   },
+
+  globals: {
+    viewport: {
+      value: "iphone6",
+      isRotated: false
+    }
+  }
 };

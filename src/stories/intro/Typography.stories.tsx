@@ -1,6 +1,6 @@
 // Typography.stories.tsx
 
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-vite";
 
 export default {
   title: "Intro/Typography",

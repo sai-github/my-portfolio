@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { action } from "storybook/actions";
 
 import ContactMe from "./ContactMe";
 const meta = {
@@ -25,9 +25,10 @@ type Story = StoryObj<typeof meta>;
 export const DesktopView: Story = {};
 
 export const MobileView: Story = {
-  parameters: {
+  globals: {
     viewport: {
-      defaultViewport: "iphone6",
-    },
+      value: "iphone6",
+      isRotated: false
+    }
   },
 };

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import Footer from "./Footer";
 
@@ -21,9 +21,10 @@ type Story = StoryObj<typeof meta>;
 export const DesktopFooter: Story = {};
 
 export const MobileFooter: Story = {
-  parameters: {
+  globals: {
     viewport: {
-      defaultViewport: "iphone6",
-    },
+      value: "iphone6",
+      isRotated: false
+    }
   },
 };
