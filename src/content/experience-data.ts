@@ -2,6 +2,22 @@ import { IExperience } from "./models";
 
 export const experienceList: IExperience[] = [
   {
+    logoLight: "/assets/wingify logo light.svg",
+    logoDark: "/assets/wingify logo dark.svg",
+    title: "Sr. Software Engineer",
+    timeline: "Sept'23 - Present",
+    company: "Wingify",
+    data: {
+      type: "list",
+      list: [
+        "Contributed to a shared AngularJS/TypeScript codebase supporting Insights, A/B Testing, and Personalization products",
+        "Supported teams for app-wide reskinning with light/dark themes and accessibility improvements",
+        "Extended D3.js graph visualizations for line charts and assisted with early copilot feature development",
+      ],
+    },
+    skills: ["AngularJS", "TypeScript", "Javascript"],
+  },
+  {
     logoLight: "/assets/airbus logo light.svg",
     logoDark: "/assets/airbus logo dark.svg",
     title: "Engineer",
