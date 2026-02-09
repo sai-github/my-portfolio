@@ -21,7 +21,7 @@ Welcome to the source code of my portfolio! You can check the live version at [r
 
 ## Development Environment 🛠
 
-- Node.js `v16.13`
+- Node.js `v22`
 - React `v18.2`
 
 ## Features & Concepts 🚀
