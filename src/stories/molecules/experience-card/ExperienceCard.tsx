@@ -48,6 +48,7 @@ const ExperienceCard = ({
           <img
             className="h-16 w-16"
             src={theme === "light" ? logoLight : logoDark || logoLight}
+            alt={`${company} logo`}
           />
           <div className="flex items-center justify-between">
             <div>

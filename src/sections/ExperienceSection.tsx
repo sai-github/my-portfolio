@@ -69,6 +69,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
             <Button
               variant="outline"
               Icon={ArrowCircleLeft}
+              aria-label="Previous experience"
               onClick={handlePrev}
             />
           )}
@@ -90,6 +91,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
             <Button
               variant="outline"
               Icon={ArrowCircleRight}
+              aria-label="Next experience"
               onClick={handleNext}
             />
           )}
@@ -99,11 +101,13 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
               <Button
                 variant="outline"
                 Icon={ArrowCircleLeft}
+                aria-label="Previous experience"
                 onClick={handlePrev}
               />
               <Button
                 variant="outline"
                 Icon={ArrowCircleRight}
+                aria-label="Next experience"
                 onClick={handleNext}
               />
             </div>
@@ -120,6 +124,7 @@ const ExperienceSection = forwardRef<HTMLElement, ExperienceSectionProps>(
               className="absolute bottom-0 right-0 mb-2 mr-2 sm:mb-8 sm:mr-8"
               variant="secondary"
               Icon={RefreshLeftSquare}
+              aria-label="Replay scene"
               onClick={() => replayScene()}
             />
           </div>

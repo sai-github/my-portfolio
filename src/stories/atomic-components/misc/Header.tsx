@@ -68,6 +68,7 @@ const Header = ({
         ) : (
           <Button
             Icon={open ? CloseCircle : MoreCircle}
+            aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => {
               setOpen((prev) => !prev);
             }}
