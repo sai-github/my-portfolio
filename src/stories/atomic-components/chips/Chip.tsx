@@ -10,7 +10,7 @@ const Chip = ({ className, name, color, ...rest }: ChipProps) => {
   const chipStyle = clsx(
     className,
     "body-sm",
-    "max-w-fit px-2 py-1 bg-[var(--current-accent)] text-[var(--current-text)] rounded-3xl border border-current"
+    "max-w-fit px-2 py-1 bg-[var(--current-accent)] text-[var(--light-text)] rounded-3xl border border-current"
   );
   return (
     <div className={chipStyle} style={{ backgroundColor: color }} {...rest}>
