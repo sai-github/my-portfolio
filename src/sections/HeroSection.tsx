@@ -98,7 +98,7 @@ const HeroSection = React.forwardRef<HTMLElement, HeroSectionProps>(
             <Spline
               scene="https://prod.spline.design/R3qmL30wVLy-6YRF/scene.splinecode"
               onLoad={onLoad}
-              onSplineMouseDown={handleThemeToggle}
+              onMouseDown={handleThemeToggle}
             />
           </div>
         )}
